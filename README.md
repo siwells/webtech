@@ -7,17 +7,18 @@ In this module we're going to break down our existing web skills, fill in any ga
 # Lectures
 
 - Lecture 00: Module Overview
-- Lecture 01: Data (HTML5) - Hypertext & Hypermedia
-- Lecture 02: Style (CSS3) - Adding visual appeal & more
-- Lecture 03: Dynamics (Javascript) - Web Programming
-- Lecture 04: Principles of Web Design & Development
-- Lecture 05: The Server side - Node JS & Data Storage
-- Lecture 06: RESTful Design
-- Lecture 07: JS Libraries & Frameworks: JQuery, Angular, React, Backbone, Vue
-- Lecture 08: Responsive Design + Bootstrap & related projects
-- Lecture 09: Web Standards & Accessibility
-- Lecture 10: Security & Privacy
-- Lecture 11 - Coda & Review
+- Lecture 01: Introduction
+- Lecture 02: Data (HTML5) - Hypertext & Hypermedia
+- Lecture 03: Style (CSS3) - Adding visual appeal & more
+- Lecture 04: Dynamics (Javascript) - Web Programming
+- Lecture 05: Principles of Web Design & Development
+- Lecture 06: The Server side - Node JS & Data Storage
+- Lecture 07: RESTful Design
+- Lecture 08: JS Libraries & Frameworks: JQuery, Angular, React, Backbone, Vue
+- Lecture 09: Responsive Design + Bootstrap & related projects
+- Lecture 10: Web Standards & Accessibility
+- Lecture 11: Security & Privacy
+- Lecture 12 - Coda & Review
 
 # Workbook: Labs & Notes
 
