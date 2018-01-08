@@ -1,37 +1,31 @@
-## Welcome to GitHub Pages
+## Welcome to the website for the Web Tech Module at Edinburgh Napier University
 
 You can use the [editor on GitHub](https://github.com/siwells/set08101/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+# Assessments
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+# Workbook: Labs & Notes
 
-```markdown
-Syntax highlighted code block
+# Lectures
 
-# Header 1
-## Header 2
-### Header 3
+- Lecture 00 - Module Overview
+- Lecture 01
+- Lecture 02
+- Lecture 03
+- Lecture 04
+- Lecture 05
+- Lecture 06
+- Lecture 07
+- Lecture 08
+- Lecture 09
+- Lecture 10
+- Lecture 11
+- Lecture 12
+- Lecture 13 - Coda
 
-- Bulleted
-- List
+# Reading
 
-1. Numbered
-2. List
+# Contact
 
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/siwells/set08101/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Simon Wells @siwells is the module leader for Mobile Application Development. You can contact him via email at s.wells@napier.ac.uk
