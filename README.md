@@ -2,20 +2,18 @@ Welcome to the website for the Web Tech Module at Edinburgh Napier University. I
 
 # Lectures
 
-- Lecture 00 - Module Overview
-- Lecture 01
-- Lecture 02
-- Lecture 03
-- Lecture 04
-- Lecture 05
-- Lecture 06
-- Lecture 07
-- Lecture 08
-- Lecture 09
-- Lecture 10
-- Lecture 11
-- Lecture 12
-- Lecture 13 - Coda
+- Lecture 00: Module Overview
+- Lecture 01: Data (HTML5) - Hypertext & Hypermedia
+- Lecture 02: Style (CSS3) - Adding visual appeal & more
+- Lecture 03: Dynamics (Javascript) - Web Programming
+- Lecture 04: Principles of Web Design
+- Lecture 05: Web Standards & Accessibility
+- Lecture 06: RESTful Design & Development
+- Lecture 07: Responsive Design + Bootstrap & related projects
+- Lecture 08: JS Libraries & Frameworks: JQuery, Angular, React, Backbone, Vue
+- Lecture 09: The Server side - Node JS
+- Lecture 10: Security & Privacy
+- Lecture 11 - Coda & Review
 
 # Workbook: Labs & Notes
 
