@@ -1,12 +1,5 @@
 ## Welcome to the website for the Web Tech Module at Edinburgh Napier University
 
-You can use the [editor on GitHub](https://github.com/siwells/set08101/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
-
-
-# Assessments
-
-# Workbook: Labs & Notes
-
 # Lectures
 
 - Lecture 00 - Module Overview
@@ -24,7 +17,11 @@ You can use the [editor on GitHub](https://github.com/siwells/set08101/edit/mast
 - Lecture 12
 - Lecture 13 - Coda
 
+# Workbook: Labs & Notes
+
 # Reading
+
+# Assessments
 
 # Contact
 
