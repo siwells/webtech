@@ -1,4 +1,4 @@
-## Welcome to the website for the Web Tech Module at Edinburgh Napier University
+Welcome to the website for the Web Tech Module at Edinburgh Napier University. It is worth bookmarking this page (as well as the [Git repo](https://github.com/siwells/set08101) or consider cloning it and regularly pulling any changes).
 
 # Lectures
 
