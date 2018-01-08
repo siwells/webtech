@@ -7,7 +7,7 @@ Welcome to the website for the Web Tech Module at Edinburgh Napier University. I
 - Lecture 02: Style (CSS3) - Adding visual appeal & more
 - Lecture 03: Dynamics (Javascript) - Web Programming
 - Lecture 04: Principles of Web Design & Development
-- Lecture 05: The Server side - Node JS
+- Lecture 05: The Server side - Node JS & Data Storage
 - Lecture 06: RESTful Design
 - Lecture 07: JS Libraries & Frameworks: JQuery, Angular, React, Backbone, Vue
 - Lecture 08: Responsive Design + Bootstrap & related projects
