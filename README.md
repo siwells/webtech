@@ -6,7 +6,7 @@ In this module we're going to break down our existing web skills, fill in any ga
 
 # Lectures
 
-- Lecture 00: Module Overview
+- [Lecture 00](https://www.dropbox.com/s/1d6hv8t4t1fq2x2/L00_overview.pdf?dl=1): Module Overview
 - Lecture 01: Introduction
 - Lecture 02: Data (HTML5) - Hypertext & Hypermedia
 - Lecture 03: Style (CSS3) - Adding visual appeal & more
@@ -21,6 +21,8 @@ In this module we're going to break down our existing web skills, fill in any ga
 - Lecture 12 - Coda & Review
 
 # Workbook: Labs & Notes
+
+-  [Lab 01](https://www.dropbox.com/s/r2b71vqb9n7ds3p/lab01_hello.web.pdf?dl=1)
 
 # Reading
 
