@@ -1,0 +1,241 @@
+\documentclass[10pt, a4paper, twosize]{article}
+%\documentclass[12pt, a4paper, twoside]{book}
+
+\usepackage{helvet}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{textcomp}
+\usepackage[
+	a4paper,
+	outer=2cm,
+	inner=4cm,
+	top=2cm,
+	bottom=2cm
+]{geometry}
+\usepackage{float}
+\usepackage{tabularx}
+\usepackage[disable]{todonotes}
+\usepackage{color, soul}
+\usepackage{amsmath}
+\usepackage{algorithmicx}
+\usepackage[noend]{algpseudocode}
+\usepackage{algorithm}
+\usepackage{framed}
+\usepackage{subcaption}
+\usepackage{titlepic}
+\usepackage{fancyhdr}
+\usepackage[simplified]{styles/pgf-umlcd}
+\usepackage{shorttoc}
+\usepackage{url}
+\usepackage{paralist}
+
+\definecolor{grey}{rgb}{0.9, 0.9, 0.9}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{dkred}{rgb}{0.6,0,0.0}
+
+\lstdefinestyle{DOS}
+{
+    backgroundcolor=\color{black},
+    basicstyle=\scriptsize\color{white}\ttfamily,
+    stringstyle=\color{white},
+    keywords={}
+}
+
+\lstdefinestyle{makefile}
+{
+    numberblanklines=false,
+    language=make,
+    tabsize=4,
+    keywordstyle=\color{red},
+    identifierstyle= %plain identifiers for make
+}
+
+\lstset{
+  language=Java,                % the language of the code
+  basicstyle=\footnotesize\ttfamily,
+  numbers=left,                   % where to put the line-numbers
+  stepnumber=1,                   % the step between two line-numbers. If it's 1, each line
+  numbersep=5pt,                  % how far the line-numbers are from the code
+  backgroundcolor=\color{white},      % choose the background color. You must add \usepackage{color}
+  showspaces=false,               % show spaces adding particular underscores
+  showstringspaces=false,         % underline spaces within strings
+  showtabs=false,                 % show tabs within strings adding particular underscores
+  frame=single,                   % adds a frame around the code
+  rulecolor=\color{black},        % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  tabsize=2,                      % sets default tabsize to 2 spaces
+  captionpos=b,                   % sets the caption-position to bottom
+  breaklines=true,                % sets automatic line breaking
+  breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+  keywordstyle=\color{blue},          % keyword style
+  commentstyle=\color{dkgreen},       % comment style
+  stringstyle=\color{dkred},         % string literal style
+  columns=fixed,
+  extendedchars=true,
+  frame=single,
+}
+
+%\renewcommand{\chaptername}{Topic}
+
+% New definitions
+\algnewcommand\algorithmicswitch{\textbf{switch}}
+\algnewcommand\algorithmiccase{\textbf{case}}
+\algnewcommand\algorithmicassert{\texttt{assert}}
+\algnewcommand\Assert[1]{\State \algorithmicassert(#1)}%
+% New "environments"
+\algdef{SE}[SWITCH]{Switch}{EndSwitch}[1]{\algorithmicswitch\ #1\ \algorithmicdo}{\algorithmicend\ \algorithmicswitch}%
+\algdef{SE}[CASE]{Case}{EndCase}[1]{\algorithmiccase\ #1}{\algorithmicend\ \algorithmiccase}%
+\algtext*{EndSwitch}%
+\algtext*{EndCase}%
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[RO, LE]{\small \rightmark}
+\fancyfoot[RO, LE]{\small \thepage}
+
+\begin{document}
+
+%\frontmatter
+
+\begin{titlepage}
+\vspace*{5cm}
+\begin{center}
+\includegraphics[width=.5\textwidth]{images/EdNapUniLogoCMYK}~\\[1cm]
+
+\textsc{\Large Edinburgh Napier University}\\[1.5cm]
+
+\textsc{\LARGE \bfseries SET08101 Web Tech}\\[0.5cm]
+
+\hrulefill \\[0.4cm]
+{\huge \bfseries Lab 1 - Introduction \& Learning Environment \\[0.4cm] }
+\hrulefill \\[1.5cm]
+
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+\textbf{Dr Simon Wells} \\
+\end{flushleft}
+\end{minipage}
+
+\vfill
+
+\end{center}
+\end{titlepage}
+
+%\shorttoc{Overview}{0}
+
+%\setcounter{tocdepth}{2}
+%\cleardoublepage
+%\tableofcontents
+%\listoffigures
+%\listofalgorithms
+%\addtocontents{toc}{~\hfill\textbf{Page}\par}
+
+%\mainmatter
+
+%\input{sections/labs/04_ui}
+
+\section{Aims}
+\paragraph{} At the end of the practical portion of this topic you will:
+
+\begin{itemize}
+\item Be able to log into the University system
+\item Be able to run simple programs from the command line
+\item Remember how to program simple software
+\item Have retrieved some supplementary texts from an online publisher
+\end{itemize}
+
+
+\begin{framed}
+{\bf{NOTICE:} This is an introductory lab that is designed to ease ourselves back into programming and make sure that we are comfortable with our learning environment before we start learning new things in earnest after the Xmas break. Things will get harder and more complex over the coming weeks but we need to ensure that we have some tools in place to start with.}  
+\end{framed}
+
+
+\section{Activities}
+
+\subsection{Get some tools}
+
+\paragraph{} All we really need for front-end development is a decent text editor and a web browser. Nearly all programming involves working with text, and web programming is no exception. So the most important tool we can add to our toolbox is a good text editor. If you make a good choice then your text editor will be the place that you spend a lot of time. Obviously as things get more complicated we will extend our toolbox, but an editor is a good place to start. If you don't already have a favourite editor (and you are on Windows) then Notepad++\footnote{\url{https://notepad-plus-plus.org/}} is a goodplace to start\footnote{Note that there are many decent editors available, Vim is an oldie but goodie (and my personal choice) but more recntly Atom \url{https://atom.io/} and Sublime \url{http://www.sublimetext.com/} have gained in popularity as well}. Download it, install it. You can even run it from a USB stick so that you can take your development environment around with you.
+
+\subsection{Hello Web}
+
+\paragraph{} Write a short HTML document called hello.html and save it in a folder called lab1, e.g.
+
+\begin{lstlisting}
+<html>
+    <head>
+        <title>WEB TECH</title>
+    </head>
+    <body>
+        <h1>Hello Web Tech</h1>
+    </body>
+<html>
+\end{lstlisting}
+
+\paragraph{} Open your web page in a variety of browsers (whichever you have installed on the machine you are using). Have a look to see what browsers are installed on the lab machines and compare any differences in the page that is rendered. Consder why different browsers might display things differently.
+
+\subsection{Developer Tools}
+\paragraph{} You will be using the developer tools built into Chrome a lot in this module, often to find out why things aren't running properly (or why the browser isn't doing what you're sure you told it to do). Partly this is because you will make mistakes. Partly because getting lots of different web technologies to work together is tricky. Things don't fit together just right and we need to work out why. We'll use Chrome to do this because:
+
+\begin{itemize}
+\item It runs on nearly every common platform
+\item It has developer tools built in
+\item It's a fairly stable platform to work with
+\end{itemize}
+
+\paragraph{} Open your hello.html file in Chrome and view it using the developer tools. Try mangling your source file, e.g. removing some tags and compare your input file to the view in the developer tools. The browser seems to fix issues, why do you think this is? How mangled can your file be before it isn't displayed? 
+
+\paragraph{} The developer tools have a lot of features and functionality. Visit the Chrome developer tools documentation\footnote{\url{https://developer.chrome.com/devtools} and \url{https://developers.google.com/web/tools/chrome-devtools/}} and read up on what it can do for you.
+
+\subsection{Background Reading}
+
+\paragraph{} Use your browser to visit \url{http://link.springer.com}. If you are on the university network you shouldn't have to log in, but otherwise your university credentials will work with the Shibboleth log in option on the site. Use the search option with the following query: ``Algorithms and Data Structures'', you might want to narrow the result by selecting the ``Books'' option in the menu on the lefthand side.
+
+\paragraph{} You can, and should, download PDF (or EPUB) copies of the following books which will supplement your reading throughout the module.
+
+\begin{itemize}
+
+\item Introducing Web Development
+\item Practical Web Design for Absolute Beginners
+\item Moving to Responsive Web Design
+\item Beginning Responsive Web Design with HTML 5 and CSS3
+\item Sustainable Web Ecosystem Design
+
+\end{itemize}
+
+\paragraph{} Pointers to other texts, chapters, and papers will be suggested throughout the module, but these should be enough to get started and provide a solid underpinning for your learning.
+
+\subsection{ Use Git}
+\paragraph{} Git is a source control system that enables you to keep track of your source code, its history and any changes you make. Git can be used to track any file but is most efficient and best suited when used only with textual files. Because Git is a \emph{distributed} source control system it works very well to enable groups of people to work on the same source code as well as supporting experimenting with your code, trying out lots of different ideas in separate \emph{branches} (which are a bit like a copy of your code but with tools to help manage that copy and support re-integrating it with your main source tree if you want to), and being able to roll back to an earlier version if you decide you have take a wrong turn.
+
+\paragraph{} I'm not going to give detailed instrutions for setting up Git on the lab machines, that's why this is a bit of a \emph{challenge}.
+
+\begin{framed}
+\textbf{IMPORTANT} Git will be a requirement for submission of the coursework hand-in so should spend some time getting familiar with it as soon as possible. A good place to start is by dipping into the Git SCM book\footnote{\url{http://git-scm.com/book/en/v2/Getting-Started-About-Version-Control}}.
+\end{framed}
+
+\paragraph{} There are also numerous interactive tutorials and resources to help you get started with Git:
+\begin{enumerate}
+\item Github's Learn Git 15 minute tutorial: \url{https://try.github.io/levels/1/challenges/1}
+\item Learn Git Branching \url{http://pcottle.github.io/learnGitBranching/}
+\item Git Immersion \url{http://gitimmersion.com/lab_01.html}
+\end{enumerate}
+
+\paragraph{} You should also create either a Github account\footnote{\url{https://github.com/}} or a Bitbucket account\footnote{\url{https://bitbucket.org}} (or both if you like) then create a repository within your new account called `set08101'. You can then push all of your code throughout the module into this repository. I'd suggest adding a folder for todays lab and commiting your hello.html file. 
+
+\paragraph{} Using Git counts as practising a professional skill. The advantage of this approach is that at any point, if you need help with your code, then you have a copy that can be shared remotely, e.g. with Simon or another member of the teaching team. However this only works if you keep adding your code to your repository. That means whenever you make changes you need to (1) add them, (2) commit them with an explanatory message,  and (3) push the changes from your local repository to the shared one on Github or Bitbucket.
+
+
+
+%\backmatter
+
+\bibliographystyle{plain}
+
+\bibliography{workbook}
+
+\end{document}
+
+%\begin{framed}
+%HELLO
+%\end{framed}
+
+
