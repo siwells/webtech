@@ -7,7 +7,7 @@ In this module we're going to break down our existing web skills, fill in any ga
 # Lectures
 
 - [Lecture 00](https://www.dropbox.com/s/1d6hv8t4t1fq2x2/L00_overview.pdf?dl=1): Module Overview
-- Lecture 01: Introduction
+- [Lecture 01](https://www.dropbox.com/s/yihemphbqcphgr9/L01_intro.pdf?dl=1): Introduction
 - Lecture 02: Data (HTML5) - Hypertext & Hypermedia
 - Lecture 03: Style (CSS3) - Adding visual appeal & more
 - Lecture 04: Dynamics (Javascript) - Web Programming
@@ -22,8 +22,10 @@ In this module we're going to break down our existing web skills, fill in any ga
 
 # Workbook: Labs & Notes
 
--  [Lab 01](https://www.dropbox.com/s/r2b71vqb9n7ds3p/lab01_hello.web.pdf?dl=1)
--  [Lab 02](https://www.dropbox.com/s/o7cpeclbwrbxwbs/lab02_html.pdf?dl=1)
+-  [Lab 01](https://www.dropbox.com/s/r2b71vqb9n7ds3p/lab01_hello.web.pdf?dl=1): Introduction
+-  [Lab 02](https://www.dropbox.com/s/o7cpeclbwrbxwbs/lab02_html.pdf?dl=1): HTML
+- Lab 03: CSS
+- Lab 04: Javascript
 
 # Reading
 
