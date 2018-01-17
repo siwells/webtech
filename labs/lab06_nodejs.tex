@@ -1,0 +1,164 @@
+\documentclass[10pt, a4paper, twosize]{article}
+%\documentclass[12pt, a4paper, twoside]{book}
+
+\usepackage{helvet}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{textcomp}
+\usepackage[
+	a4paper,
+	outer=2cm,
+	inner=4cm,
+	top=2cm,
+	bottom=2cm
+]{geometry}
+\usepackage{float}
+\usepackage{tabularx}
+\usepackage[disable]{todonotes}
+\usepackage{color, soul}
+\usepackage{amsmath}
+\usepackage{algorithmicx}
+\usepackage[noend]{algpseudocode}
+\usepackage{algorithm}
+\usepackage{framed}
+\usepackage{subcaption}
+\usepackage{titlepic}
+\usepackage{fancyhdr}
+\usepackage[simplified]{styles/pgf-umlcd}
+\usepackage{shorttoc}
+\usepackage{url}
+\usepackage{paralist}
+
+\definecolor{grey}{rgb}{0.9, 0.9, 0.9}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{dkred}{rgb}{0.6,0,0.0}
+
+\lstdefinestyle{DOS}
+{
+    backgroundcolor=\color{black},
+    basicstyle=\scriptsize\color{white}\ttfamily,
+    stringstyle=\color{white},
+    keywords={}
+}
+
+\lstdefinestyle{makefile}
+{
+    numberblanklines=false,
+    language=make,
+    tabsize=4,
+    keywordstyle=\color{red},
+    identifierstyle= %plain identifiers for make
+}
+
+\lstset{
+  language=Java,                % the language of the code
+  basicstyle=\footnotesize\ttfamily,
+  numbers=left,                   % where to put the line-numbers
+  stepnumber=1,                   % the step between two line-numbers. If it's 1, each line
+  numbersep=5pt,                  % how far the line-numbers are from the code
+  backgroundcolor=\color{white},      % choose the background color. You must add \usepackage{color}
+  showspaces=false,               % show spaces adding particular underscores
+  showstringspaces=false,         % underline spaces within strings
+  showtabs=false,                 % show tabs within strings adding particular underscores
+  frame=single,                   % adds a frame around the code
+  rulecolor=\color{black},        % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  tabsize=2,                      % sets default tabsize to 2 spaces
+  captionpos=b,                   % sets the caption-position to bottom
+  breaklines=true,                % sets automatic line breaking
+  breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+  keywordstyle=\color{blue},          % keyword style
+  commentstyle=\color{dkgreen},       % comment style
+  stringstyle=\color{dkred},         % string literal style
+  columns=fixed,
+  extendedchars=true,
+  frame=single,
+}
+
+%\renewcommand{\chaptername}{Topic}
+
+% New definitions
+\algnewcommand\algorithmicswitch{\textbf{switch}}
+\algnewcommand\algorithmiccase{\textbf{case}}
+\algnewcommand\algorithmicassert{\texttt{assert}}
+\algnewcommand\Assert[1]{\State \algorithmicassert(#1)}%
+% New "environments"
+\algdef{SE}[SWITCH]{Switch}{EndSwitch}[1]{\algorithmicswitch\ #1\ \algorithmicdo}{\algorithmicend\ \algorithmicswitch}%
+\algdef{SE}[CASE]{Case}{EndCase}[1]{\algorithmiccase\ #1}{\algorithmicend\ \algorithmiccase}%
+\algtext*{EndSwitch}%
+\algtext*{EndCase}%
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[RO, LE]{\small \rightmark}
+\fancyfoot[RO, LE]{\small \thepage}
+
+\begin{document}
+
+%\frontmatter
+
+\begin{titlepage}
+\vspace*{5cm}
+\begin{center}
+\includegraphics[width=.5\textwidth]{images/EdNapUniLogoCMYK}~\\[1cm]
+
+\textsc{\Large Edinburgh Napier University}\\[1.5cm]
+
+\textsc{\LARGE \bfseries SET08101 Web Tech}\\[0.5cm]
+
+\hrulefill \\[0.4cm]
+{\huge \bfseries Lab X -  \\[0.4cm] }
+\hrulefill \\[1.5cm]
+
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+\textbf{Dr Simon Wells} \\
+\end{flushleft}
+\end{minipage}
+
+\vfill
+
+\end{center}
+\end{titlepage}
+
+%\shorttoc{Overview}{0}
+
+%\setcounter{tocdepth}{2}
+%\cleardoublepage
+%\tableofcontents
+%\listoffigures
+%\listofalgorithms
+%\addtocontents{toc}{~\hfill\textbf{Page}\par}
+
+%\mainmatter
+
+%\input{sections/labs/04_ui}
+
+\section{Aims}
+\paragraph{} At the end of the practical portion of this topic you will:
+
+\begin{itemize}
+\item \end{itemize}
+
+
+\begin{framed}
+{\bf{NOTICE:}  }
+\end{framed}
+
+
+\section{Activities}
+
+\subsection{}
+\paragraph{} 
+
+
+
+
+\end{document}
+
+%\begin{framed}
+%\end{framed}
+
+
+%\begin{lstlisting}
+%\end{lstlisting}
