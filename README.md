@@ -22,8 +22,8 @@ In this module we're going to break down our existing web skills, fill in any ga
 
 # Workbook: Labs & Notes
 
--  [Lab 01](https://www.dropbox.com/s/r2b71vqb9n7ds3p/lab01_hello.web.pdf?dl=1): Introduction
--  [Lab 02](https://www.dropbox.com/s/o7cpeclbwrbxwbs/lab02_html.pdf?dl=1): HTML
+- [Lab 01](https://www.dropbox.com/s/r2b71vqb9n7ds3p/lab01_hello.web.pdf?dl=1): Introduction
+- [Lab 02](https://www.dropbox.com/s/o7cpeclbwrbxwbs/lab02_html.pdf?dl=1): HTML
 - [Lab 03](https://www.dropbox.com/s/8fx06kg67zauutu/lab03_css.pdf?dl=1): CSS
 - Lab 04: Javascript
 
