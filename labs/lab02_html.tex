@@ -159,7 +159,7 @@
     <body>
         <h1>Hello Web Tech</h1>
     </body>
-<html>
+</html>
 \end{lstlisting}
 
 \paragraph{} We also discovered that the browser is very good at fixing problems in the supplied document. The DOM which is parsed from the HTML file is an internal model that the browser builds of how the HTML is strucured. It actually expects a DOCTYPE tag to begin things so our example last week wasn't strictly correct. It should have been like this:
@@ -173,7 +173,7 @@
     <body>
         <h1>Hello Web Tech</h1>
     </body>
-<html>
+</html>
 \end{lstlisting}
 
 \paragraph{} We can simplify that some more but it doesn't look very interesting in the browser because we can remove the head, body, title and heading tags and their associated content to give a minimal valid HTML document as follows:
@@ -181,7 +181,7 @@
 \begin{lstlisting}
 <!DOCTYPE html>
 <html>
-<html>
+</html>
 \end{lstlisting}
 
 \subsection{HTML Elements}
@@ -207,7 +207,7 @@
     <body>
         <h1>A Very Important Heading</h1>      
     </body>
-<html>
+</html>
 \end{lstlisting}
 
 \begin{itemize}
@@ -232,7 +232,7 @@
     <body>
         <img src="https://raw.githubusercontent.com/siwells/set08101/master/resources/vmask.jpg" />      
     </body>
-<html>
+</html>
 \end{lstlisting}
 
 \paragraph{} We can either use a link to an image from a website on the web, e.g. \url{https://raw.githubusercontent.com/siwells/set08101/master/resources/vmask.jpg} as in the example above, or we can use a local image file. If you do use a link to an image that is someone else's site then this is often considered bad form. You also have no control over what your link actually points to and the image could be replaced with something else at any point. The best case scenario is that the image link becomes broken. 
@@ -248,7 +248,7 @@
     <body>
         <img src="vmask.jpg" />      
     </body>
-<html>
+</html>
 \end{lstlisting}
 
 \paragraph{} Note that you can place image into a subfolder but you will have to specify the path to that folder in your HTML, e.g. if the image is in the images sub-folder then:
@@ -262,7 +262,7 @@
     <body>
         <img src="images/vmask.jpg" /> 
     </body>
-<html>
+</html>
 \end{lstlisting}
 
 
@@ -286,7 +286,7 @@
     <body>
         <a href="https://siwells.github.io/set08101/">Module Website</a>        
     </body>
-<html>
+</html>
 \end{lstlisting}
 Will create a piece of text in the body of our html document which links to our module webpage. Load it up in a browser and click the link. It should take you to our module webpage. Try adding another link to another website of your choice. What other tags might you need to use to arrange these links in a nice way. As we design our web sites we must consider how and when we want a link to work, sometimes we might want to list a collection of links, but at other times we might want to include our links inline in our paragraphs of text.
 
