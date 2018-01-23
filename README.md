@@ -8,8 +8,8 @@ In this module we're going to break down our existing web skills, fill in any ga
 
 - [Lecture 00](https://www.dropbox.com/s/1d6hv8t4t1fq2x2/L00_overview.pdf?dl=1): Module Overview
 - [Lecture 01](https://www.dropbox.com/s/yihemphbqcphgr9/L01_intro.pdf?dl=1): Introduction
-- Lecture 02: Data (HTML5) - Hypertext & Hypermedia
-- Lecture 03: Style (CSS3) - Adding visual appeal & more
+- [Lecture 02](https://www.dropbox.com/s/oap0mof6bb0emrw/L02_html.pdf?dl=1): Data (HTML5) - Hypertext & Hypermedia
+- [Lecture 03](https://www.dropbox.com/s/4fkaipizyz5rsze/L03_css.pdf?dl=1): Style (CSS3) - Adding visual appeal & more
 - Lecture 04: Dynamics (Javascript) - Web Programming
 - Lecture 05: Principles of Web Design & Development
 - Lecture 06: The Server side - Node JS & Data Storage
