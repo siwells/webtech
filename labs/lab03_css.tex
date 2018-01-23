@@ -107,7 +107,7 @@
 \textsc{\LARGE \bfseries SET08101 Web Tech}\\[0.5cm]
 
 \hrulefill \\[0.4cm]
-{\huge \bfseries Lab X -  \\[0.4cm] }
+{\huge \bfseries Lab 3 - CSS \\[0.4cm] }
 \hrulefill \\[1.5cm]
 
 \begin{minipage}{0.4\textwidth}
@@ -138,18 +138,232 @@
 \paragraph{} At the end of the practical portion of this topic you will:
 
 \begin{itemize}
-\item \end{itemize}
+\item be able to style HTML elements using:
+    \begin{itemize}
+    \item style parameters
+    \item style blocks
+    \item style files
+    \end{itemize}
+\end{itemize}
 
 
 \begin{framed}
-{\bf{NOTICE:}  }
+{\bf{NOTICE:} Like everything else to do with the web there is a lot useful material online. In addition to reading the relevent chapters of the module texts, you should also avail yourself of the following which document CSS:
+\begin{itemize}
+\item \url{https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3}
+\item \url{https://www.w3schools.com/cssref/default.asp}
+\item \url{https://devdocs.io/css/}
+\end{itemize}
+
+}
 \end{framed}
 
 
 \section{Activities}
 
-\subsection{}
-\paragraph{} 
+\subsection{CSS Style Parameters}
+\paragraph{} Given an HTML document, we can add style to any of the elements that are included in it. For example, we can take the following:
+
+\begin{lstlisting}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SET08101 - Headings</title>
+    </head>
+    <body>
+        <h1>A Very Important Heading</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </body>
+</html>
+\end{lstlisting}
+
+\paragraph{} and make it look very garish:
+
+\begin{lstlisting}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SET08101 - Headings</title>
+    </head>
+    <body style="background-color:red">
+        <h1 style="background-color:blue">A Very Important Heading</h1>
+        <p style="background-color:yellow">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </body>
+</html>
+\end{lstlisting}
+
+\paragraph{} We can also change the color of the text itself (as well as doing many other things, CSS includes \emph{lots} of features).
+
+\begin{lstlisting}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SET08101 - Headings</title>
+    </head>
+    <body style="background-color:red">
+        <h1 style="background-color:blue; color:green">A Very Important Heading</h1>
+        <p style="background-color:yellow; color:orange">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </body>
+</html>
+\end{lstlisting}
+
+\paragraph{} Try to find a more harmonious choice of colours for the example. It might be helpful to investigate this site which will give you some idea of the colours available for your use: \url{http://htmlcolorcodes.com/}. We will return to the issue of colour palettes in a couple of topic's time when address design. Use of colour is a very important element of design that can have a big effect on the usability and accessibility of your site, as well as the overall aesthetic design.
+
+\paragraph{} Note that there are many more things we can do with CSS to affect the typographical layout of our pages. For example
+
+\begin{lstlisting}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SET08101 - Headings</title>
+    </head>
+    <body>
+        <h1>A Very Important Heading</h1>
+        <p style="text-align:right">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </body>
+</html>
+\end{lstlisting}
+
+\paragraph{} As well as text-align, we can also use text-decoration (to affect the decorations associated with some text), text-transform (to capitalise or switch between upper and lower case), text-indent (to specify the amount of indentation for the first line of text) and many more. We can specify a font family to use (font-family), font-style (e.g. normal, italic, oblique), font-size (using pixels or em units), font-weight (normal or bold). We can also style links, list elements, add tool tips and much more using CSS. I recommend spending some time exploring the various things that CSS can do using the links set out at the beginning of this lab.
+
+\subsection{CSS Style Blocks}
+\paragraph{} Rather than adding style to each individual element, it can be much more efficient to gather all of the CSS rules into one place. We can have a single <style> block that collects together all of the styles that we had previously applied directly to individual elements. For example:
+
+\begin{lstlisting}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SET08101 - Headings</title>
+    </head>
+    <body >
+        <h1>A Very Important Heading</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </body>
+    <style type="text/css">
+        body {background-color:red}
+        h1 {background-color:blue; color:green}
+        p {background-color:yellow; color:orange}
+    </style>
+</html>
+\end{lstlisting}
+
+\paragraph{} Note that this shouldn't appear any different to the previous version, we've just moved the rules to a different place in the same file
+
+\paragraph{} An advantage of this is that we can easily change styles without searching through the file for where they are actually used. Not a big problem with our current example HTML files but very useful when dealing with larger pages. We can also apply different styles to the same HTML element when it is used in different places. Let's add a second paragraph (feel free to change the text if you want):
+
+\begin{lstlisting}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SET08101 - Headings</title>
+    </head>
+    <body >
+        <h1>A Very Important Heading</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+    </body>
+    <style type="text/css">
+        body {background-color:red}
+        h1 {background-color:blue; color:green}
+        p {background-color:yellow; color:orange}
+    </style>
+</html>
+\end{lstlisting}
+
+\paragraph{} Note that both paragraphs have the same style. If we want each to look different then we need to give the paragraphs either a class or an individual ID using the class="" or id="" HTML attributes. We decide whether to use a class or an ID based upon whether there might be a group of elements that need to be styled similarly, in which case we would say that they all share the same class. If there is a specific instantiation of an element that is an individual and unique from other instances of the same element then you might want to give the special element an ID. Let's look at some examples:
+
+\begin{lstlisting}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SET08101 - Headings</title>
+    </head>
+    <body >
+        <h1>A Very Important Heading</h1>
+        <p class="first">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+       <p class="second">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+    </body>
+    <style type="text/css">
+        body {background-color:red}
+        h1 {background-color:blue; color:green}
+        .first {background-color:orange; color:teal}
+        .second {background-color:green; color:yellow}
+    </style>
+</html>
+\end{lstlisting}
+
+\paragraph{} Notice that in this next version we've added a third paragraph, but this time it has an id instead of a class. In the style block we use the period `.' to prefix the class name for an element that we want to apply a style to, e.g. .first \{background-color:orange; color:teal\} and we use the hash `\#' to prefix the ID of an element that we want to apply a style to, e.g. \#important \{background-color:black; color:red\}
+
+\begin{lstlisting}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SET08101 - Headings</title>
+    </head>
+    <body >
+        <h1>A Very Important Heading</h1>
+        <p id="important">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p class="first">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+       <p class="second">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+    </body>
+    <style type="text/css">
+        body {background-color:red}
+        h1 {background-color:blue; color:green}
+        .first {background-color:orange; color:teal}
+        .second {background-color:green; color:yellow}
+        #important {background-color:black; color:red}
+    </style>
+</html>
+\end{lstlisting}
+
+\paragraph{} This only scratches the surface of what we can do with CSS styles. 
+
+\subsection{CSS Style Files}
+\paragraph{} Having placed styles inline with elements, then collecting them together so that we can easily manage an entire document's worth of styles, the next step is collecting all of our styles together into a separate file so that the same CSS file can be used by multiple different HTML files. If we are creating a website built from multiple HTML files, e.g. multiple web pages, then we probably want to have a single, consistent design across all of the pages. This means we can reduce repetition, instead of our styles being in a style block on each page, instead they are all collected together into a single file. Another advantage is that when we want to adjust our site's design we only need to update our styles in a single place and they will then be update across the entire site when the user refreshes their browser.
+
+\paragraph{} Create a text file called external.html and place the following code into it:
+
+\begin{lstlisting}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="external.css" type="text/css"/>
+        <title>SET08101 - External Stylesheets</title>
+    </head>
+    <body >
+        <h1>A Very Important Heading</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </body>
+</html>
+\end{lstlisting}
+
+\paragraph{} Notice that when we view it in the browser it is a default, unstyled HTML file as we would expect because there are no CSS style rules included. 
+
+\paragraph{} Now create a second text file, in the same directory as external.html. Call the new file external.css and put the following into it:
+
+\begin{lstlisting}
+body {background-color:red}
+h1 {background-color:blue; color:green}
+p {background-color:orange; color:teal}
+\end{lstlisting}
+
+\paragraph{} Now when we reload the HTML file our styles should be applied, except that now, instead of bing inline or even within the HTML file, our styles are now all defined externally in a separate file. This helps keep our content and the structure of that content, i.e. the HTML file, and how that file is presented, the CSS, separate so that we can a nice balance of simplicity and flexibility.
+
+\subsection{Challenge}
+\paragraph{}Take the plain HTML pages that you developed last week in the challenge section of the HTML topic labsheet and add a style sheet to them. You should only need one stylesheet to account for all of he pages. Consider the factors involved in styling a well structured HTML file in order to make it more visually appealing. We will revisit this topic later when we are considering designing sites.
+
+\subsection{Finally}
+\paragraph{} If you want additional practise then the W3Schools CSS exercises are a great place to start:
+\begin{itemize}
+\item CSS Exercises: \url{https://www.w3schools.com/css/css_exercises.asp}
+\end{itemize}
+
+\paragraph{Note:} These exercises can frequently require you to do some extra reading before you have the knowledge to solve the problems posed.
+
+
 
 
 
