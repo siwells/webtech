@@ -52,6 +52,10 @@ There are two practical skills assessments which together make up the full grade
 - Coursework Assignment #1 (25%)
 - Coursework Assignment #2 (75%)
 
+# Resources
+
+- [Using Git for Napier Student](https://www.dropbox.com/s/2kz34u0zb4qajvd/getting.started.pdf?dl=1)
+
 # Contact
 
 Simon Wells @siwells is the module leader for Mobile Application Development. You can contact him via email at s.wells@napier.ac.uk
