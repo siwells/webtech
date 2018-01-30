@@ -169,7 +169,7 @@
         <title>SET08101 - Inline JavaScript</title>
     </head>
     <body>
-        <p><a href="#" onClick="alert('Hello World');)">Click Me</a></p> 
+        <p><a href="#" onClick="alert('Hello World');">Click Me</a></p> 
     </body>
 </html>
 \end{lstlisting}
@@ -211,7 +211,7 @@
         <title>SET08101 - Inline JavaScript</title>
     </head>
     <body>
-        <p><a href="#" onMouseOver="alert('Hello');)">Hover over me</a></p> 
+        <p><a href="#" onMouseOver="alert('Hello');">Hover over me</a></p> 
     </body>
 </html>
 \end{lstlisting}
@@ -225,7 +225,7 @@
         <title>SET08101 - Inline JavaScript</title>
     </head>
     <body>
-        <p><a href="#" onMouseOut="alert('Hello');)">Hover over me</a></p> 
+        <p><a href="#" onMouseOut="alert('Hello');">Hover over me</a></p> 
     </body>
 </html>
 \end{lstlisting}
@@ -261,21 +261,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="external.css" type="text/css"/>
-        <title>SET08101 - External JavaScript</title>
-    </head>
-    <body >
-        <p><a href="#" onClick="helloFunction();"></a></p>
-    </body>
-</html>
-\end{lstlisting}
-
-\paragraph{} Now create a second text file in the same folder as external.html called hello.js and place the folowing code in it:
-
-\begin{lstlisting}
-<!DOCTYPE html>
-<html>
-    <head>
          <script src="hello.js"></script> 
         <title>SET08101 - External JavaScript</title>
     </head>
@@ -283,6 +268,14 @@
         <p><a href="#" onClick="helloFunction();">Click Me</a></p>
     </body>
 </html>
+\end{lstlisting}
+
+\paragraph{} Now create a second text file in the same folder as external.html called hello.js and place the folowing code in it:
+
+\begin{lstlisting}
+function helloFunction(){ 
+    alert('Hello Napier'); 
+}
 \end{lstlisting}
 
 \paragraph{} As with CSS files, we can place our JavaScript files into their own folders but we must then give the \emph{path} to our JavaScript within the script tag.
@@ -432,7 +425,7 @@
 \subsection{Finally}
 \paragraph{} If you want additional practise then the W3Schools JavaScript exercises are a great place to start:
 \begin{itemize}
-\item CSS Exercises: \url{https://www.w3schools.com/js/}
+\item JavsScript Exercises: \url{https://www.w3schools.com/js/}
 \end{itemize}
 
 \paragraph{} A good way to practice a new language or to improve your existing abilities, not just in JavaScript, but in any language you might be trying to learn, is to try to solve a set of problems using the language. I often use Project Euler when starting out with a new language but there are also many others:
