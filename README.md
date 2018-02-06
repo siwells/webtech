@@ -11,7 +11,7 @@ In this module we're going to break down our existing web skills, fill in any ga
 - [Lecture 02](https://www.dropbox.com/s/oap0mof6bb0emrw/L02_html.pdf?dl=1): Data (HTML5) - Hypertext & Hypermedia
 - [Lecture 03](https://www.dropbox.com/s/4fkaipizyz5rsze/L03_css.pdf?dl=1): Style (CSS3) - Adding visual appeal & more
 - [Lecture 04](https://www.dropbox.com/s/badyn1vfp8ymaps/L04_javascript.pdf?dl=1): Dynamics (Javascript) - Web Programming
-- Lecture 05: Principles of Web Design & Development
+- [Lecture 05](https://www.dropbox.com/s/ymufn540cpvk0ug/L05_design%2Bdev.pdf?dl=1): Principles of Web Design & Development
 - Lecture 06: The Server side - Node JS & Data Storage
 - Lecture 07: RESTful Design
 - Lecture 08: JS Libraries & Frameworks: JQuery, Angular, React, Backbone, Vue
