@@ -138,15 +138,19 @@
 \paragraph{} At the end of the practical portion of this topic you will:
 
 \begin{itemize}
-\item \end{itemize}
+\item deploy your web pages to a web server
+\item deploy you web pages to GitHub
+\item be aware of the range of paid for services for hosting
+\end{itemize}
 
 
-\begin{framed}
-{\bf{NOTICE:}  }
-\end{framed}
+%\begin{framed}
+%{\bf{NOTICE:}  }
+%\end{framed}
 
 
 \section{Activities}
+\paragraph{} First we'll find out a bit more about web servers and run one locally to host the pages we've developed so far. Then we'll see how GitHub can be used to host our webpages. Finally, we'll look at the range of online services available to host our web sites.
 
 \subsection{Web Servers}
 \paragraph{} So far we've developed some web pages and sites on our local machine then opened them using a web browser on the same machine. This is a perfectly fine way to go about things, particularly early in the development cycle. An awful lot of websites will run from a folder on your local machine. As a rule anything that doesn't rely on additional software, such as a database, or on server side data processing, such as social features or relaying data to other users, will run just fine in the browser. It's only when we need the server to do some processing for us, which takes the load away from our web browser, or when we need to share data, or when we want our pages to be made available to other that we need to get them off our local machine.
@@ -284,36 +288,21 @@ Now we can visit \url{http://localhost:5000/hello.html} to see our glorious new 
 \label{fig:github_hello}
 \end{figure}
 
+\paragraph{} There are many other free web hosting services as well as many paid services. Generally the paid services will offer more features and better reliability, but free services are a good place to start. Once you know you have enough users to need something better, then it's worth paying for. Although perhaps it's worth working out a way to provide some form of revenue. Try searching for web hosting services and get a feel for prices and services.
 
-\subsection{Node.JS}
-\paragraph{}
+\section{Virtual Servers}
+\paragraph{} Many places offer hosting services but often this is at the cost of running the software that the hosting provider specified. The next tier up is to run your own virtual server. This gives you much greater control over the software that runs, but requires more expertise to keep the server running both robustly and securely. For example, Linode are a popular and well priced solution \url{https://www.linode.com/pricing}. There are many others, e.g. at the time of writing, the following were the top results for a quick search on ``VPS'':
 
-\subsection{Node.JS as a hosting platform}
-\paragraph{} In addition to hosting your server-side JavaScript, node can also host your regular HTML files. This can be a useful way to test out your site locally or to simplify your deployment. For example, to avoid having to install a full additional web-server if you already have node installed, or else to serve up a small number of static pages in addition to a web-app generation from JS. 
+\begin{itemize}
+\item \url{https://www.ovh.co.uk/vps/}
+\item \url{https://www.vps.net/}
+\item \url{https://uk.godaddy.com/hosting/vps-hosting}
+\item \url{https://www.1and1.co.uk/virtual-server}
+\end{itemize}
 
-\paragraph{} We'll need to install the libraries that Node will use:
+\paragraph{} There are also many providers who also offer free tiers to try out their services. These are generally very low performance, but are more than adequate for testing your deployment before spending any money.  You'll have to look around to find them though as these lowest tier machines are often used to hook in new customers through special offers.
 
-
-\begin{lstlisting}[style=DOS]
-$ npm install connect serve-static
-\end{lstlisting}
-
-\paragraph{} Now we need to create a small JS file to tell node how to serve our HTML:
-
-\begin{lstlisting}
-var connect = require('connect');
-var serveStatic = require('serve-static');
-connect().use(serveStatic(__dirname)).listen(8080, function(){ 
-    console.log('Server running on 8080...');
-    });
-\end{lstlisting}
-
-
-\subsection{CouchDB}
-\paragraph{}
-
-\subsection{MongoDB}
-\paragraph{}
+\paragraph{} Spend some time investigating the range of web hosting provders and compariing facilities.
 
 \end{document}
 
