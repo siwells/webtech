@@ -27,6 +27,7 @@ In this module we're going to break down our existing web skills, fill in any ga
 - [Lab 03](https://www.dropbox.com/s/8fx06kg67zauutu/lab03_css.pdf?dl=1): CSS
 - [Lab 04](https://www.dropbox.com/s/pxrfl95kfxle5q7/lab04_javascript.pdf?dl=1): Javascript
 - [Lab 05](https://www.dropbox.com/s/md9ewatkz9csrjv/lab05_design.pdf?dl=1): Design
+- [Lab 06](https://www.dropbox.com/s/mlycacajfafa208/lab06_serverside.pdf?dl=1): Deployment
 
 # Reading
 
