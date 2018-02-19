@@ -57,6 +57,7 @@ There are two practical skills assessments which together make up the full grade
 # Resources
 
 - [Using Git for Napier Students](https://www.dropbox.com/s/2kz34u0zb4qajvd/getting.started.pdf?dl=1)
+- [LaTeX Quick Start using the ENU Report Template](https://www.dropbox.com/s/h3066ezsetsw49t/latex_quick.start.pdf?dl=1)
 
 # Contact
 
