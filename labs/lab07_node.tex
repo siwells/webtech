@@ -107,7 +107,7 @@
 \textsc{\LARGE \bfseries SET08101 Web Tech}\\[0.5cm]
 
 \hrulefill \\[0.4cm]
-{\huge \bfseries Lab 6 - The Server Side \\[0.4cm] }
+{\huge \bfseries Lab 6 - Beginning Node.JS\\[0.4cm]}
 \hrulefill \\[1.5cm]
 
 \begin{minipage}{0.4\textwidth}
@@ -138,167 +138,94 @@
 \paragraph{} At the end of the practical portion of this topic you will:
 
 \begin{itemize}
-\item \end{itemize}
+\item 
+\end{itemize}
 
-
-\begin{framed}
-{\bf{NOTICE:}  }
-\end{framed}
-
+\subsection{Introduction}
+\paragraph{} We've concentrated so far on JavaScript in the browser or \emph{on the client side}. Now let's look at using JS on the server as well. We'll start by running the Node console and using it as a place to type in JS code. This is quite a powerful little tool that we can use to work with JS as just another programming language rather than hosting it in a browser linked to HTML files. We'll then look at using Node as a HTTP server, to host 
 
 \section{Activities}
 
-\subsection{Web Servers}
-\paragraph{} So far we've developed some web pages and sites on our local machine then opened them using a web browser on the same machine. This is a perfectly fine way to go about things, particularly early in the development cycle. An awful lot of websites will run from a folder on your local machine. As a rule anything that doesn't rely on additional software, such as a database, or on server side data processing, such as social features or relaying data to other users, will run just fine in the browser. It's only when we need the server to do some processing for us, which takes the load away from our web browser, or when we need to share data, or when we want our pages to be made available to other that we need to get them off our local machine.
+\subsection{Getting Node.JS}
 
-\paragraph{} If you are on a lab machine\emph{If you're on a Mac then you can install nginx using homebrew. If you're using Linux then apt-get install nginx (or the equivalent for your distro.)} you can download the latest zipped version of the nginx web server from here: \url{http://nginx.org/download/nginx-1.13.8.zip}.
+\paragraph{} Download the Node.JS Windows Binary distribution (zip file) from the node.js website: \url{https://nodejs.org/en/download/}\footnote{Or directly download this zip: \url{https://nodejs.org/dist/v8.9.4/node-v8.9.4-win-x86.zip}}. Don't use the MSI download if you're on a lab machine because this might need administrative privileges to install.\\ 
 
-\paragraph{} Create a folder on your h: drive called ``apps'' and copy your nginx zip to it. Right click on the zip and select ``Extract All...'' from the menu. This should give you a folder called nginx-1.13.8 which you should navigate into. Now open the nginx.conf which can be found in the conf sub-directory. We need to make one tiny alteration here. We need to tell nginx which port to listen on for connections from web browsers. By default nginx will listen on port 80 but this is a \emph{privleged port} which means that you need to be an admin to use it. Instead we are going to use port 5000 which has been made available in the labs for us to use. Line 36 of nginx.conf will contain a line like this:
+\includegraphics[width=.8\textwidth]{images/node_web-download}
+
+\paragraph{} Once you've downloaded the zip, extract it to somewhere suitable such as a folder on your H: drive or on USB stick.Don't just double click zip file but instead ensure that you've properly extracted the contents of the zip file. If you have trouble extracting the contents of the zip file then use a decent zip archive tool like 7zip\footnote{7zip portable download: \url{https://portableapps.com/apps/utilities/7-zip_portable}} instead.
+
+\paragraph{} Once you've extracted the Node files we should have a folder containing some useful tools. The most important here is node.exe which we can use to run the Node program, but we'll get to that in the next section...
+
+\paragraph{} If you're on a Mac then use homebrew to install Node, e.g.
+
 \begin{lstlisting}[style=DOS]
-listen       80;
+$ brew install node
 \end{lstlisting}
 
-\paragraph{} and we need to change it to:
+\paragraph{} If you're on Linux then use APT, or you're distro's package manager to install Node, e.g.
 
 \begin{lstlisting}[style=DOS]
-listen       5000;
+$ apt-get install node
 \end{lstlisting}
 
-\paragraph{} Save nginx.conf and close the file. We can now doubleclick nginx.exe and run our server. 
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.85\textwidth]{images/nginx_exe}
-\caption{The nginx executable.}
-\label{fig:nginx_welcome}
-\end{figure}
+\subsection{Node.JS Console}
+\paragraph{} We can run node and use JS as just another programming language rather than as a \emph{web} programming language. That is we can write some JS and execute it without having to have an HTML file to host our code and load it into the browser. In fact, we don't even need the browser at this point, although we will quickly return to using the browser as this is a web technologies module after all.
+
+\paragraph{} Node comes complete with a console. A place where we can type JS code and see the output immediately. Such an environment is known as REPL, a Read-Evaluate-Print-Loop environment; it reads a command, works out what to do, prints the result, then loops back to the start and reads the next thing. We can get a node REPL by double clicking the node.exe program:\\
+
+\includegraphics[width=.8\textwidth]{images/node_executable}
+
+\paragraph{} If all has gone well we should see a window like this:\\
+
+\includegraphics[width=.8\textwidth]{images/node_repl}
+
+\paragraph{} This is a place that we can type JS code into, why not give it a go? Let's start with some basic arithmetic:\\
+
+\includegraphics[width=.8\textwidth]{images/node_repl-arithmetic}
+
+\paragraph{} We can use ctrl+l to clear the screen at any time and ctrl+c twice to exit\footnote{We can also exit the REPL by typing .exit} from the REPL. As well as arithmetic we can also do standard JS programming, like the following:\\
+
+\includegraphics[width=.8\textwidth]{images/node_repl-progamming}
+
+\paragraph{} We can also do multiline input by just pressing return wherever we need to. For example, to type in a function:\\
+
+\includegraphics[width=.8\textwidth]{images/node_repl-multi-line}
+
+\paragraph{} This is called continuity mode, because when we press return we are allowed by the REPL to write the next line as a continuation of our previous code. When in continuity mode we will see the `...' as our prompt instead of `$>$'. You can leave continuity mode by typing `.break' if needed.
+
+\paragraph{} Node has a bunch of useful commands that you can explore, for example, \emph{.help} which gives you information about some of the basic REPL commands. The tab key will display all the available commands. You can also use the up and down arrow keys to cycle through previous commands and lines of code that you've already typed in to stop your have to re-type things. The \emph{.save} command will enable you to save your current REPL session, and \emph{.load} will load the specified file into the Node REPL session. Ctrl+C (once) will terminate the current command and ctrl+c (twice) will exit the REPL.
 
 
-\paragraph{} There might be some messages from the Windows firewall which you should click through to allow nginx to run. You can now open a browser and navigate to \url{http://localhost:5000}. You should see something similar to the following:
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.85\textwidth]{images/nginx_welcome}
-\caption{The default nginx web page at \url{http://localhost:5000}.}
-\label{fig:nginx_welcome}
-\end{figure}
-
-\paragraph{} The pages that nginx runs can be found in the html subfolder of the nginx folder\footnote{This location will very likely be different if you've installed nginx on a mac or Linux system so you might have to do a little research to get things working properly there. Windows packages things up a bit differently.}. Lets create a quick new HTML file in the html folder and see our page displayed. 
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.85\textwidth]{images/nginx_html}
-\caption{Our hello.html file in the nginx html subfolder.}
-\label{fig:nginx_welcome}
-\end{figure}
-
-
-\paragraph{} We now need to edit hello.html as follows:
+\subsection{Node.JS as a JavaScript execution environment}
+\paragraph{} We can load and run JS written in external files in two ways. Firstly by loading them within the REPL and secondly by passing the JS file to be executed to node.exe when we start it. Let's try both out. For convenience let's first create a simple JS file called ``hello.js'' and add the following code to it using a preferred editor:
 
 \begin{lstlisting}
-<!DOCTYPE html>
-<html>
-<head>
-<title>Hello Napier</title>
-</head>
-<body>
-<h1>Your first page</h1>
-<p>Well, kind of. It's (probably [possibly?]) your first page running in a web-server.</p>
-</body>
-</html>
+console.log('Hello Napier');
 \end{lstlisting}
 
-Now we can visit \url{http://localhost:5000/hello.html} to see our glorious new page running in a web browser and being served by an actual web server. You should see something like this:
+\paragraph{} I saved this to a subfolder of the node folder called js so that I could easily access examples. You can save your JS files wherever you like but you'll have to specify where they are to Node. Now you can start node and use the `.load' command to load and execute your external JS file, e.g.\\
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.85\textwidth]{images/nginx_hello}
-\caption{Our ``hello napier'' web page served up by nginx at \url{http://localhost:5000/hello.html}.}
-\label{fig:nginx_welcome}
-\end{figure}
+\includegraphics[width=.8\textwidth]{images/node_repl_external-file}
 
-\paragraph{} Note that we had to specify which file the browser needed to retrieve. Servers will generally serve up an index.html file by default if no other file is explicitly requested. However, the configuration for most web servers will allow you to alter this behaviour if you have a pressing need. In fact, servers can generally be configured and tuned to suit a wide array of situations and needs. However, for now, we don't need to worry too much about tuning our server as it is a really big topic and overlaps very heavily with more general server administration which is concerned with security, reliability, and performance\footnote{This is one of those areas where you can do some background reading but be prepared for a \emph{deep} rabbit hole with the side effect of developing some really useful professional skills.}.
+\paragraph{} Alternatively, instead of clicking node.exe we can start Node from the command line (cmd.exe)\footnote{Go to the Start menu and type ``cmd.exe'' into the ``Search programs and files'' box.} and tell it which JS file to load as an argument to the executable. For example:\\
 
-\paragraph{} You can add additional subfolders to the html folder for each of your projects for the moment. Try this and add some of the sites and files that you've been developing in earlier labs. Navigate to your files and compare them to how they look when loading from the file system. Really you shouldn't notice any difference from the user perpsective.
+\includegraphics[width=.8\textwidth]{images/node_external-file}
 
-\paragraph{} In reality we would add configuration files for nginx so that the server would listen for requests to various web addresses, for example, the same web server could host many different web sites, each with a different URL. However, like everything else in web land, this is another rabbit hole that you should explore yourself if you want to deploy your own web site on your own server. For the purposes of this lab we'll use the default configuration.
-
-\paragraph{} An important point to note is that our pages are now being server by a real web server. With network and configuration changes\footnote{which we cannot make for security reasons} we could make our nginx server listen for connections from anywhere else on the Internet, and in response, nginx would send back our HTML, CSS, \& JS. There is no real difference, bar some configuration, between what you now have running and many web sites that are out there in the real world. The web really does have quite a low barrier to entry doesn't it. Relate this back to our discussions about how the web is a tool for democratising information and think about how powerful this idea is. \emph{Anyone can run a web server and serve up whatever information they like to whomever wants to read it}.
-
-\paragraph{} It's worth doing some reading about the nginx project, especially if you want to deploy your sites elsewhere than your lab machine. Remember however that nginx is just one, albeit quite popular, web server. There are many others available. For many years Apache was the most popular web server. Ultimately, which server you choose to use will depend upon your expeience and the specific needs of the project that you are working on. Some servers have different capabilities, can work with different sets of server side languages or have different performance characteristics. Nginx for example is currently regarded as relatively fast and efficient for general web site hosting and is also capable of being tuned to scale greatly.
-
-\paragraph{} When you're done playing with nginx you can shut it down using the Windows Task Manager. Press ctrl+shit+escape then look for nginx.exe * 32 in the `Processes' tab. There may be two entries, so select one then click the end process button, then select the other and repeat the process. On a real, public web server we would usually have helper scripts to manage this process but to be honest, we are usually concerned mostly with keeping nginx running constantly rather then starting it up and shutting it down frequently.
-
-\subsection{Hosting Services}
-\paragraph{} There are many hosting services that give you free or low-cost \emph{static} hosting. In fact Github actually does this. Any Github repo can serve up html, css, and javascript from a `docs' folder. You just have to configure the repository to do so. For example, my personal web site at \url{https://www.simonwells.org} is actually hosted at GitHub as is the SET08101 websites at \url{https://siwells.github.io/set08101/}.
-
-\paragraph{} If you've a GitHub account then log in and create a new repository. If you haven't got a GitHub account then create one. Clone your new repository and add a new folder called `docs' then put an index.html into the docs folder. Edit the index.html as follows:
-
-\begin{lstlisting}
-<!DOCTYPE html>
-<html>
-<head>
-<title>GitHub Hosting</title>
-</head>
-<body>
-<h1>Your first GitHub hosted page</h1>
-<p>Some stuff....</p>
-</body>
-</html>
-\end{lstlisting}
-
-\paragraph{} Add, commit, and push your changes to GitHub. Now go to the GitHub repository and check that you docs folder and index.html are there. Now hit the `Settings' button which looks like this:
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.5\textwidth]{images/github_settings}
-\caption{The GitHub repository settings button.}
-\label{fig:github_settings}
-\end{figure}
-
-\paragraph{} Now navigate down to the section named `GitHub' Pages which looks like this:
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.85\textwidth]{images/github_config_before}
-\caption{The GitHub config page before you enable pages.}
-\label{fig:github_config_before}
-\end{figure}
-
-\paragraph{} In the drop down select `master branch /docs folder' then hit the save button. If you scroll to the GitHub Pages section again it should look like this:
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.85\textwidth]{images/github_config_after}
-\caption{The GitHub config pages after enabling pages.}
-\label{fig:github_config_after}
-\end{figure}
-
-
-\paragraph{} There are additional things you can do, like adding a custom domain name but that is beyond the scope of this lab\footnote{but again, that's something to add to your lists of things to explore.}. GitHub might take a few moments, but in theory you should now be able to navigate to your index.html in the docs folder and see it displayed as a regular webpage. GitHub should show you the address for your new site in the GitHub Pages section of the config. For example, my demo address was hosted at \url{https://siwells.github.io/hosting/} because I named my repository `hosting' and my GitHub account name is `siwells'. Anyway, navigate to the URL of your repository's pages and you should see something like this:
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.85\textwidth]{images/github_hello}
-\caption{Our GitHub hosted web page.}
-\label{fig:github_hello}
-\end{figure}
-
-
-\subsection{Node.JS}
-\paragraph{}
+\paragraph{} Using these techniques we can pretty much use node.exe as our own little programming platform. But there's more, so much more we can do with Node. We've barely scratched the surface...
 
 \subsection{Node.JS as a hosting platform}
 \paragraph{} In addition to hosting your server-side JavaScript, node can also host your regular HTML files. This can be a useful way to test out your site locally or to simplify your deployment. For example, to avoid having to install a full additional web-server if you already have node installed, or else to serve up a small number of static pages in addition to a web-app generation from JS. 
 
-\paragraph{} We'll need to install the libraries that Node will use:
-
+\paragraph{} We'll need to install the libraries that Node will use. We'll do this by opening the Windows command prompt, then navigating to the location of node.exe, but this time we're going to use the ``npm'' command:
 
 \begin{lstlisting}[style=DOS]
 $ npm install connect serve-static
 \end{lstlisting}
 
-\paragraph{} Now we need to create a small JS file to tell node how to serve our HTML:
+\paragraph{} The Node Package Manager (NPM)\footnote{It's well worth visiting the NPM site \url{https://www.npmjs.com/} and doing some background reading on this technology. There are thousands of ready made packages available though the NPM.} is a way to package up and distribute JS code for use with Node. We just installed two packages, one called \emph{connect} and the other called \emph{serve-static} which we'll use to serve up our existin HTML.
+
+\paragraph{} Now we need to create a small JS file, let's call it `server.js', to tell node how to serve our HTML:
 
 \begin{lstlisting}
 var connect = require('connect');
@@ -308,12 +235,31 @@ connect().use(serveStatic(__dirname)).listen(8080, function(){
     });
 \end{lstlisting}
 
+\paragraph{} Now we also need a small index.html to serve up, e.g.
 
-\subsection{CouchDB}
-\paragraph{}
+\begin{lstlisting}
+<!DOCTYPE html>
+<html>
+  <head><title>Hello</title></head>
+  <body>
+    <h1>hello</h1>
+  </body>
+</html>
+\end{lstlisting}
 
-\subsection{MongoDB}
-\paragraph{}
+\paragraph{} Put both index.html and server.js into the js folder then invoke node.js to run server.js, e.g.\\
+
+\includegraphics[width=.8\textwidth]{images/node_serving}
+
+\paragraph{} We should now be able to navigate to either \url{http://localhost:8080} or \url{http://127.0.0.1:8080} in our web browser and see our HTML file:\\
+
+\includegraphics[width=.8\textwidth]{images/node_serving_hello}
+
+\section{Next}
+\paragraph{} There are a whole bunch of Node.JS libraries that we can build on so that Node can act as a complete server-side web language. These libraries will help us to construct our own web-apps and APIs so that we can generate our user interface on-the-fly based upon what our user wants. This is how many highly interactive websites function and developing skills in this area will enable us to begin the process of going beyond the (mostly-) static websites that we've developed so far. 
+
+%\subsection{MongoDB}
+%\paragraph{}
 
 \end{document}
 
@@ -326,3 +272,12 @@ connect().use(serveStatic(__dirname)).listen(8080, function(){
 
 %\begin{lstlisting}[style=DOS]
 %\end{lstlisting}
+
+
+%\begin{figure}[H]
+%\centering
+%\includegraphics[width=0.85\textwidth]{images/nginx_exe}
+%\caption{The nginx executable.}
+%\label{fig:nginx_welcome}
+%\end{figure}
+
