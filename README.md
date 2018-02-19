@@ -28,6 +28,7 @@ In this module we're going to break down our existing web skills, fill in any ga
 - [Lab 04](https://www.dropbox.com/s/pxrfl95kfxle5q7/lab04_javascript.pdf?dl=1): Javascript
 - [Lab 05](https://www.dropbox.com/s/md9ewatkz9csrjv/lab05_design.pdf?dl=1): Design
 - [Lab 06](https://www.dropbox.com/s/mlycacajfafa208/lab06_serverside.pdf?dl=1): Deployment
+- [Lab 07](https://www.dropbox.com/s/8e0p1n1bqg8xxth/lab07_node.pdf?dl=1): Beginning Node.JS
 
 # Reading
 
