@@ -12,10 +12,10 @@ In this module we're going to break down our existing web skills, fill in any ga
 - [Lecture 03](https://www.dropbox.com/s/4fkaipizyz5rsze/L03_css.pdf?dl=1): Style (CSS3) - Adding visual appeal & more
 - [Lecture 04](https://www.dropbox.com/s/badyn1vfp8ymaps/L04_javascript.pdf?dl=1): Dynamics (Javascript) - Web Programming
 - [Lecture 05](https://www.dropbox.com/s/ymufn540cpvk0ug/L05_design%2Bdev.pdf?dl=1): Principles of Web Design & Development
-- [Lecture 06](https://www.dropbox.com/s/p8b09xmqnvru5xj/L06_the.server.side.pdf?dl=1): The Server side & Node.JS
-- Lecture 07: RESTful Design
-- Lecture 08: Datastores: JSON, XML, & Databases
-- Lecture 09: JS Libraries & Frameworks: JQuery, Angular, React, Backbone, Vue
+- [Lecture 06](https://www.dropbox.com/s/p8b09xmqnvru5xj/L06_the.server.side.pdf?dl=1): Servers, Web Serving, & Web Scale
+- [Lecture 07](https://www.dropbox.com/s/uxh9h65lktehitf/L07_dynamic.sites.pdf?dl=1): Dynamic Sites using Node.JS
+- Lecture 08: RESTful Design
+- Lecture 09: Datastores: JSON & Databases
 - Lecture 10: Web Standards & Accessibility
 - Lecture 11: Security & Privacy
 - Lecture 12 - Coda & Review
