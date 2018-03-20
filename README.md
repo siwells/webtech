@@ -30,6 +30,8 @@ In this module we're going to break down our existing web skills, fill in any ga
 - [Lab 06](https://www.dropbox.com/s/mlycacajfafa208/lab06_serverside.pdf?dl=1): Deployment
 - [Lab 07](https://www.dropbox.com/s/8e0p1n1bqg8xxth/lab07_node.pdf?dl=1): Beginning Node.JS
 - [Lab 08](https://www.dropbox.com/s/7r084h4clpk5a53/lab08_webapps.pdf?dl=1): Beginning server side web-apps with Node & Express
+- [Lab 09](https://www.dropbox.com/s/ihetckgwobyauet/lab09_api.design.pdf?dl=1): Designing APIs with REST & JSON
+- [Lab 10](https://www.dropbox.com/s/zduffpk8cfy68ja/lab10_datastores.pdf?dl=1): Datastores
 
 # Reading
 
