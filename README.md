@@ -42,6 +42,8 @@ The University Library has subscriptions to a heap of online resources. The foll
 - [Moving to Responsive Web Design](https://link.springer.com/book/10.1007/978-1-4842-1987-4)
 - [Beginning Responsive Web Design with HTML 5 and CSS3](https://link.springer.com/book/10.1007/978-1-4302-6695-2)
 - [Sustainable Web Ecosystem Design](https://link.springer.com/book/10.1007/978-1-4614-7714-3)
+- [Beginning Node.js](https://link.springer.com/book/10.1007/978-1-4842-0187-9)
+- [Pro Express.js](https://link.springer.com/book/10.1007/978-1-4842-0037-7)
 
 The library also has a lot of books on web development & related technologies. You should supplement the suggested reading above with books and other resources that you find for yourself. This is part of the university experience, taking the suggested readings and topics covered during lectures and labs, using them as a basic scaffold, then diving deeply into related topics in order to extend your knowledge and in order to tailor your learning and skillset to your own interests and career plans.
 
