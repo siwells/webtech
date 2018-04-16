@@ -17,7 +17,7 @@ In this module we're going to break down our existing web skills, fill in any ga
 - [Lecture 08](https://www.dropbox.com/s/raxma3iqh62u25r/L08_rest.pdf?dl=1): Web-apps & RESTful Design
 - Lecture 09: Datastores: JSON & Databases
 - Lecture 10: Web Standards & Accessibility
-- Lecture 11: Security & Privacy
+- [Lecture 11](https://www.dropbox.com/s/7wztj1d5a2ggclb/L11_security%2Bprivacy.pdf?dl=1): Security & Privacy
 - Lecture 12 - Coda & Review
 
 # Workbook: Labs & Notes
