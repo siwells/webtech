@@ -58,7 +58,7 @@ The following aren't currently available via our library, but are worth getting 
 There are two practical skills assessments which together make up the full grade for this module.
 
 - [Coursework Assignment #1]() (40%)
-- [Coursework Assignment #2]) (60%)
+- [Coursework Assignment #2]() (60%)
 
 # Resources
 
