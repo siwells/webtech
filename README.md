@@ -57,8 +57,8 @@ The following aren't currently available via our library, but are worth getting 
 
 There are two practical skills assessments which together make up the full grade for this module.
 
-- [Coursework Assignment #1](https://www.dropbox.com/s/04myfz68kyjivjr/descriptor%231.pdf?dl=1) (25%)
-- [Coursework Assignment #2](https://www.dropbox.com/s/g50r54tv58vv9i1/descriptor%232.pdf?dl=1) (75%)
+- [Coursework Assignment #1]() (40%)
+- [Coursework Assignment #2]) (60%)
 
 # Resources
 
