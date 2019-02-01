@@ -29,6 +29,7 @@
 \usepackage{shorttoc}
 \usepackage{url}
 \usepackage{paralist}
+\usepackage{verbatim}
 
 \definecolor{grey}{rgb}{0.9, 0.9, 0.9}
 \definecolor{dkgreen}{rgb}{0,0.6,0}
@@ -151,7 +152,206 @@
 
 \section{Activities}
 
-\paragraph{} If we want a website to be dynamic, to let user's interact with it beyond just reading static data, then there is a good chance that we'll want to save some of that data. We have a number of strategies to achieve this. We'll take three main approaches to persisting our data, firstly using the filesystem, a simple, straightforward, and robust solution. Secondly we'll try a traditional relational database, then lastly we'll look at a cloud-based version of a NoSQL datastore.
+\paragraph{} If we want a website to be dynamic, to let user's interact with it beyond just reading static data, then there is a good chance that we'll want to save some of that data. We have a number of strategies to achieve this. We'll take two main approaches to persisting our data, firstly on the client side, and then on the server side. 
+
+\paragraph{} For the client side we'll look at ways to store data using the browser; cookies and web-storage%, and the nascent Indexed DB.
+
+\paragraph{} For the Server-side we also have three approaches, firstly using the filesystem, a simple, straightforward, and robust solution. Secondly we'll try a traditional relational database, then lastly we'll look at a cloud-based version of a NoSQL datastore.
+
+\paragraph{} Data storage is a huge topic so this lab only really scratches the surface. However, you should, by the end, feel comfortable with persisting data on the server or client, and should be building some skills in deciding which approach to take depending upon the problems that you are presented with.
+
+\subsection{Cookies}
+\paragraph{} We can create cookies from JavaScript. It's not the only way, but it is a good method to get started. You can do the following exercises from the Javascript console in your browser, first ensuring that you have cookies enabled. Cookies have a really simple JavaScript API. For the most part just using a call to document.cookie is sufficient to create, retrieve, update, and delete a cookie.
+
+\paragraph{} Enter the following into the console, replacing ``your name'' with your actual name.
+\begin{lstlisting}
+    document.cookie = "username=your name";
+\end{lstlisting}
+\paragraph{} This will add the double-quoted content to the ``cookie string'' for the current page.
+
+
+\paragraph{} To retrieve our cookie we need to create a variable and then call document.cookie which returns the cookie string. In the next example we will do so then print out the variable using console.log()
+\begin{lstlisting}
+    var x = document.cookie;
+    console.log(x);
+\end{lstlisting}
+\paragraph{} We can also set an expiry date for a cookie, for example:
+
+\begin{lstlisting}
+document.cookie = "password=secret; expires=Thu, 18 Dec 2019 12:00:00 UTC"; 
+\end{lstlisting}
+
+\paragraph{} After the expiry date, that particular key \& value pair will be deleted.
+
+\paragraph{} If we repeat the retrieval of our cooke from above, we'll notice that our password key has been appended to hte previous string so both username and password are stored in the same cookie. This is because there is just one cookie string for each page. So to retrieve a particular key we need to pull apart the cookie using JavaScript to retrieve the specific key that we are interested in.
+
+\paragraph{} For example, to retrieve just the value for the username we could create a function that searches the cookie string for the supplied cookie\_name, e.g.
+\begin{lstlisting}
+function getCookie(cookie_name)
+{
+    var name = cookie_name + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++)
+    {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') 
+        {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) 
+        {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+\end{lstlisting}
+
+\paragraph{} We can then use our function to retrieve a specific value from the cookie, for example, the username:
+
+\begin{lstlisting}
+console.log(getCookie("username"));
+\end{lstlisting}
+
+\paragraph{} Deleting a cookie is achieved by setting an expiry date that is in the past, for example:
+\paragraph{} 
+\begin{lstlisting}
+document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+\end{lstlisting}
+\paragraph{}
+
+\paragraph{} To update a value stored in a cookie you merely replace the existing key with the new kvalue, for example, here we just set a new username with an updated value which will replace the existing value:
+\begin{lstlisting}
+document.cookie = "username=Carol Danvers;";
+\end{lstlisting}
+
+\paragraph{} Your cookies should probably not live forever, it is good practise to set an expiry date which is a reasonable length of time into the future. To make it easier to program, a nice way to do this is to use a function, for example, this one will create a cookie using the supplied key and value and will set an expiry date based upon the supplied value for the number of days.
+
+\begin{lstlisting}
+function setCookie(name, value, expiry)
+{
+    var d = new Date();
+    d.setTime(d.getTime() + (expiry*24*60*60*1000));
+    var expires = "expires="+ d.toUTCString();
+    document.cookie = name + "=" + value + ";" + expires;
+}
+\end{lstlisting}
+
+\paragraph{} Now create a simple site using HTML, CSS, \& JS that uses cookies to persist some data. A good place to start is to create a simple form that asks some questions about the user. stores the responses in a cookie, then uses the data in the cookie to personalise a message to the user. For example, asking a user what their name is, then whether they are happy or sad and respond with something appropriate that is personalised to them.
+
+\subsection{Web Storage}
+
+\paragraph{} This option provides more space for your site to store data on the client. The amount of space is browser specific, and the API is only supported by newer browsers, so you'll have to check first, in code, whether web storage is supported.
+
+\paragraph{} The basic idea with web-storage is that you can store keys and values. Both keys and values are always strings, so you may have to do some type conversion for some of your variables. If you have JSON objects, then you can store these by converting them to a string using the JSON.stringify function. Thera are two types of web-storage available, localStorage and sessionStorage. The main difference is that sessionStorage is only available whilst the current window is open and is deleted afterwards, i.e. once your current session is over. However data stored in local storage will be available for ever unless explicitly deleted, for example, by your webapp, or by the user clearing all local data, reformatting their drive, etc.
+
+\paragraph{} 
+
+\begin{lstlisting}
+function storageAvailable(type)
+{
+    try
+    {
+        var storage = window[type],
+            x = '__storage_test__';
+        storage.setItem(x, x);
+        storage.removeItem(x);
+        return true;
+    }
+    catch(e)
+    {
+        return e instanceof DOMException && (
+            e.code === 22 ||
+            e.code === 1014 ||
+            e.name === 'QuotaExceededError' ||
+            e.name === 'NS_ERROR_DOM_QUOTA_REACHED') &&
+            storage.length !== 0;
+    }
+}
+\end{lstlisting}
+\paragraph{} In this we attempt to use the storage API and then catch any exceptions that are thrown. Even if storage is available, there are reason why it might not be usable, either due to local settings, such as privacy settings, the way that private browsing works (if you are in a private browsing window then you might have local storage available but the amount of space to store anything in is set to zero), or because you've already filled it up.
+
+\paragraph{} We can call our storageAvailable function with the value ``localStorage'' or ``sessionstorage'' to see which is available to use.
+\begin{lstlisting}
+if (storageAvailable('localStorage'))
+{
+    // We can do something with the localStorage...
+}
+else 
+{
+    // Have to come up with an alternative way to store data
+}
+\end{lstlisting}
+
+\paragraph{} We can then actually add data to the storage using the setItem function, for example,
+\begin{lstlisting}
+localStorage.setItem('name','simon');
+\end{lstlisting}
+\paragraph{} Checking whether something has been set can be quite useful. We can achieve that like this using the getItem function (we assume that we, as programmers, will know which keys our web pages will have set):
+
+\begin{lstlisting}
+if(localStorage.getItem('name')) {console.log("set");}
+\end{lstlisting}
+
+\paragraph{} We can also retrieve that data using the getItem function, for example, let's retrieve what we just stored and display it:
+\begin{lstlisting}
+var myname = localStorage.getItem('name');
+console.log(myname);
+\end{lstlisting}
+\paragraph{}
+
+
+
+\begin{comment}
+\subsection{Indexed DB}
+\paragraph{} Another browser API, this time much more complex, and aimed at providing a full client side database for use by the browser and more advanced web-applications. Think of cookies, webstorage, and Indexed DB as a hierarchy of increasing power and complexity, from very limited data storage with a restricted API in cookies, through more space, longer persistence, and a slightly more complex API with web storage, right through to Indexed DB which can store significant volumes of data with less restrictions than are found with web-storage. Because this is more complex, and becaues IndexedDB is currently a candidate standard which might yet be enhanced or surpassed, we'll only take a brief look at it now.
+
+\paragraph{} We can check whether our browser has support for Indexed DB using something like this:
+\begin{lstlisting}
+if (('indexedDB' in window))
+{
+    console.log('This browser supports IndexedDB');
+}
+\end{lstlisting}
+\paragraph{}
+
+\paragraph{} 
+\begin{lstlisting}
+(function()
+{
+  'use strict';
+
+  //check for support
+  if (!('indexedDB' in window)) {
+    console.log('This browser doesn\'t support IndexedDB');
+    return;
+  }
+
+  var dbPromise = indexedDB.open('test-db1', 1);
+
+})();
+\end{lstlisting}
+\paragraph{}
+
+
+
+\paragraph{} 
+\begin{lstlisting}
+
+\end{lstlisting}
+\paragraph{}
+
+
+
+\paragraph{} 
+\begin{lstlisting}
+
+\end{lstlisting}
+\paragraph{}
+\end{comment}
+
+
 
 \subsection{Filesystem}
 \paragraph{} Whilst JS usually has little support for input and output which is all handled by the browser environment in which the JS runs, Node gives us other opportunities. Saving files to the file system is a useful and simple technique that can lead to robust, reliable sites and good performance. We can use the \emph{fs} Node module. We'll need to install fs using NPM first, e.g.
@@ -342,6 +542,8 @@ MongoClient.connect(MONGO_URL, (err, db) => {
 
 \paragraph{} Obviously there's a whole lot more that MongoDB and mLab can do, but that is what documentation is for. Perhaps a first exercise might be to reimplement the hit counter app that we used in filesystem and sql persistence to use a Mongo instance instead?
 
+\subsection{Challenges}
+\paragraph{} You should consider how to incorporate appropriate data storage into the sites that we've already developed during previous challenges. For example, if you've been working on the dungeon-crawler game then cookies are a really good, light-weight method of storing a small amount of data about the current player. For example, the players health, what they are carrying, which locations they've visited. Obviously, you have a small amount of space to store your data in a cookie, but this should be more than sufficient for simple player specific data. If you are generating a larger dungeon, then you might want to consider using one of the other types of client-side storage. The nice thing about this approach is that each time your player revisits the site they should be able to pick up at exactly the place that they left off. This is a nice way to persist a game whilst maintaining a very lightweight, casula approach for your player.
 \end{document}
 
 %\begin{framed}

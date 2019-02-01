@@ -172,7 +172,7 @@ $ apt-get install node
 \subsection{Node.JS Console}
 \paragraph{} We can run node and use JS as just another programming language rather than as a \emph{web} programming language. That is we can write some JS and execute it without having to have an HTML file to host our code and load it into the browser. In fact, we don't even need the browser at this point, although we will quickly return to using the browser as this is a web technologies module after all.
 
-\paragraph{} Node comes complete with a console. A place where we can type JS code and see the output immediately. Such an environment is known as REPL, a Read-Evaluate-Print-Loop environment; it reads a command, works out what to do, prints the result, then loops back to the start and reads the next thing. We can get a node REPL by double clicking the node.exe program:\\
+\paragraph{} Node comes complete with a console\footnote{Documentation for the HTTP module is available here: \url{https://nodejs.org/api/repl.html}}. A place where we can type JS code and see the output immediately. Such an environment is known as REPL, a Read-Evaluate-Print-Loop environment; it reads a command, works out what to do, prints the result, then loops back to the start and reads the next thing. We can get a node REPL by double clicking the node.exe program:\\
 
 \includegraphics[width=.8\textwidth]{images/node_executable}
 
@@ -255,11 +255,350 @@ connect().use(serveStatic(__dirname)).listen(8080, function(){
 
 \includegraphics[width=.8\textwidth]{images/node_serving_hello}
 
+\subsection{Building a Web Server in Node from (nearly) scratch}
+\paragraph{} Let's now implement our own web frameowrk using only the built-in \emph{http} module\footnote{Documentation for the HTTP module is available here: \url{https://nodejs.org/api/http.html}} that Node supplies for handling HTTP related functionality. Note that there are a lot of frameowrks out there that do a similar thing such as \emph{express}, but by implementing our own, we should get a much clearer understanding of what these frameworks actually do for us.
+
+\paragraph{} The http module has a createServer function that is very useful. We need to create an HTTP server, tell it to listen for events, and to respond to those events in an appropriate way.
+
+
+\begin{lstlisting}
+const { createServer } = require("http");
+
+const PORT = process.env.PORT || 5000;
+
+const server = createServer();
+
+server.on("request", (request, response) => {
+  response.end("Hello, world!");
+});
+
+server.listen(PORT, () => {
+  console.log(`starting server at port ${PORT}`);
+});
+\end{lstlisting}
+
+\paragraph{} What we've done is create a new instance of an HTTP server using the createServer function then add an event listener that waits for request events and prints a traditional message to our users when such an event occurs. Finally we tell the server which port to listen on for those incoming requests. In the real world we listen on port 80 because this is the default port that web browsers connect to. Browsers can connect to other ports, but the default happens automatically.
+
+\paragraph{} When a request event occurs we send a response, in this case using the respond.end function to return a string. We can do more with response, for example, in this case we use multiple response.write calls followed by a final response.end call to construct our response:
+
+\begin{lstlisting}
+const { createServer } = require("http");
+
+const PORT = process.env.PORT || 5000;
+
+const server = createServer();
+
+server.on("request", (request, response) => {
+  response.write("Hello");
+  response.write(", ");
+  response.write("World!");
+  response.end();
+});
+
+server.listen(PORT, () => {
+  console.log(`starting server at port ${PORT}`);
+});
+\end{lstlisting}
+
+\paragraph{} Consider how we could use this to construct a web page, perhaps having different functions to generate parts of our page. One thing to consider is that response is a stream, so we can keep adding data to a response until it is closed using the respponde.end() call. However, if we fail to close the stream, the client will keep waiting for more data and, from our server's perspective this constitutes a memory leak as we will have allocated resources that aren't reclaimed.
+
+\paragraph{} Now that we have a basic HTTP server that listens to requests and sends back responses, we probably want to do some of the other things that an HTTP server does. For example, most HTTP server don't just respond with the web page that you see in the browser. They also send header information and status codes so that client can decide how to interpret the content. Servers also don't just send the same response, they examine the request that they receive and return different pages depending on which page is requested. This last thing, responding with the actual content requested according to the address specified, is known as \emph{routing}. We'll look at each in turn...
+
+
+\subsubsection{HTTP \& HTTP Headers}
+\paragraph{} This protocol is a text-based agreement for communicating Hypertext documents between clients and servers. It is request-response based, as we've just seen. But it also does a whole lot more. Here is what a typical HTTP request looks like:
+
+\begin{lstlisting}
+GET / HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_2) AppleWebKit/537.36 (KHTML, like Gecko)
+Host: blog.bloomca.me
+Accept-Language: en-us
+Accept-Encoding: gzip, deflate
+Connection: Keep-Alive
+\end{lstlisting}
+
+\paragraph{} There can also be a load more other inforamtion supplied as well, for example, specific headers to communicate access tokens as part of the server's access control, cookies, perhaps containing log-in data. Importantly, the request will always include a method, a path, and headers, which are a bunch of key-value pairs.
+
+\paragraph{} We can access the headers from within our server. Let's try that out.
+
+\begin{lstlisting}
+const { createServer } = require("http");
+
+const PORT = process.env.PORT || 5000;
+
+const server = createServer();
+
+server.on("request", (request, response) => 
+{
+    const languages = request.headers["accept-language"];
+    response.end(languages);  
+});
+
+server.listen(PORT, () => 
+{
+    console.log(`starting server at port ${PORT}`);
+});
+
+\end{lstlisting}
+
+\paragraph{} When run this should show us which languages are accepted by the client.
+
+\begin{lstlisting}
+en-GB,en;q=0.5
+\end{lstlisting}
+
+\paragraph{} Just as the client can communicate metadata to the server through the request headers, when we create a response, we can also specify particular headers to communicate back to the client. A response is actually structured, again as plain text, as a set of headers followed by two newline characters which are in turn followed by the body of the response. The body is the bit that we usually think of as the web-page. The body is the bit where our HTML would be. Let's investigate the headers first though. We can set headers using either of the following response.setHeader() and response.writeHead() functions.
+
+\begin{lstlisting}
+const { createServer } = require("http");
+
+const PORT = process.env.PORT || 5000;
+
+const server = createServer();
+
+server.on("request", (request, response) => 
+{
+    response.setHeader("content-type", "application/json");
+
+    response.end(JSON.stringify({ name: "simon" }));
+});
+
+server.listen(PORT, () => 
+{
+    console.log(`starting server at port ${PORT}`);
+});
+
+\end{lstlisting}
+
+\paragraph{} When we run this we will get a JSON file returned, instead of a web-page, like this:
+\begin{lstlisting}
+{"name":"simon"}
+\end{lstlisting}
+\paragraph{} Consider how we could use this to perhaps build an API that listens for HTTP requests and then returns data to the client, for example, returning data that is loaded into a web-page, or that is consumed by a mobile application. Some approaches to developing dynamic web-sites involve storing all of the content as JSON which is rendered into HTML entirely in the browser.
+
+\paragraph{} If we inspect the headers that were returned alongside the JSON file, we'll also see that our ``content-type'' header has also been set.
+
+\begin{lstlisting}
+Connection	keep-alive
+Content-Length	16
+Date	Fri, 01 Feb 2019 15:51:09 GMT
+content-type	application/json
+\end{lstlisting}
+
+
+\subsubsection{HTTP Status Codes}
+\paragraph{} Whilst web developers don't all agree on the semantics of how HTTP status codes should be used in some cases, there is broad consensus regarding their use for most common interactions on the web. For example, the use of 200 when everything is ``OK'', using 404 when an address is specified but there isn't actually a resource to return for that address. Similarly, if a route is protected and a user supplies incorrect credentials then a 403 might be used. If a user access a protected route without supplying credentials then a 401 unauthorized might happen. If a user make a bad request, perhaps omitting an essential URL parameter or supplying incorrect parameters then a 400 might be raised. One status code that you will probably be familiar with, especially if you are doing web development of dynamic sites, is the 500 code which is used to indicate an internal server error.
+
+\paragraph{} Status code responses can be set with either the rsponse.statusCode() or response.writeHead() function, for example, using a custom status code...
+
+\begin{lstlisting}
+const { createServer } = require("http");
+
+const PORT = process.env.PORT || 5000;
+
+const server = createServer();
+
+server.on("request", (request, response) => 
+{
+    response.writeHead(666, "OH Hell!!!");
+    response.end();
+});
+
+server.listen(PORT, () => 
+{
+    console.log(`starting server at port ${PORT}`);
+});
+\end{lstlisting}
+
+\paragraph{} We can inspect the headers that are returned using our browser's developer tools. Usually this is via the network tab\footnote{On the network tab refresh the page then click the page that you want to inspect headers for. These will then be displayed.}.
+
+
+
+\subsubsection{Routing}
+\paragraph{} One of the basis ideas with the Web based version of hypertext is that different resources are available from different addresses. Our webserver Node app has a single request handler, but needs to be able to repond to requests for different URLs. This is achieved quite simply by mapping different responses to different URL requests. Fore example, using the request.url property we can access the URL from the request, and then use a simple programming construct to handle each URL differently.
+
+\begin{lstlisting}
+const { createServer } = require("http");
+
+const PORT = process.env.PORT || 5000;
+
+const server = createServer();
+
+server.on("request", (request, response) => 
+{
+   switch (request.url) 
+   {
+    case "/":
+      response.end("Our beautiful homepage");
+      break;
+    case "/about":
+      response.end("An equally beautiful about page");
+      break;
+    default:
+      response.statusCode = 404;
+      response.end("Page not found!");
+   }
+});
+
+server.listen(PORT, () => 
+{
+    console.log(`starting server at port ${PORT}`);
+});
+\end{lstlisting}
+
+\paragraph{} Efficiently routing requests and returning the correct page is an important function that is actually central to all web frameworks.
+
+
+
+\subsubsection{HTTP Methods}
+\paragraph{} Just like with HTTP status codes, methods are a contentious area. Or rather, the correct use of HTTP methods can lead to significant discussion about their semantics. Whilst the semantics of GET is straightforward, the difference between PUT and POST are less clear and lead to implementaion subtleties as sites, in terms of hypertext applications, get larger and more complex. Generally, GET is used to retrieve a web resource, whilst PUT and POST are used to create new resources. They differ however in their semantics. Usually PUT is considered to be \emph{idempotent} whilst POST is not.
+
+\begin{lstlisting}
+const { createServer } = require("http");
+
+const PORT = process.env.PORT || 5000;
+
+const server = createServer();
+
+server.on("request", (request, response) => 
+{
+   if (request.method === "GET")
+   {
+    return response.end("Got a GET");
+  } 
+  else if (request.method === "POST") 
+  {
+    return response.end("Got a POST");
+  } 
+  else
+  {
+    resource.statusCode(400);
+    return responsee.end("Method not supported");
+  }
+});
+
+server.listen(PORT, () => 
+{
+    console.log(`starting server at port ${PORT}`);
+});
+\end{lstlisting}
+\paragraph{} If we visit \url{localhost:5000/} in our browser then we will see the ``Got a GET'' message because our browser issues GET requests by default. It's not straightforward to issue other other types of HTTP method. The only other message that you can do from a browser using HTML is POST from a form. Otherwise we need either some Javascript, or a tool that can issue other kinds of HTTP requests. For example, the command line ``curl'' tool will contact a server and can issue many other kinds of request. This makes tools like curl really useful for testing out your APIs and for inspecting server responses.
+
+
+\subsection{Cookies}
+\paragraph{} We've seen cookies before in many other contexts, but we would expect a modern web framework to be able to set and use cookies. So let's see how to do this.
+
+\begin{lstlisting}
+const { createServer } = require("http");
+
+const PORT = process.env.PORT || 5000;
+
+const server = createServer();
+
+server.on("request", (request, response) => 
+{
+    response.setHeader("Set-Cookie",["daka=dakadaka", "type=ninja", "name=simon"]);
+    response.end(`Your cookies are: ${request.headers.cookie}`); 
+});
+
+server.listen(PORT, () => 
+{
+    console.log(`starting server at port ${PORT}`);
+});
+\end{lstlisting}
+
+\paragraph{} In this example we used the setHeader function to add a cookie line to the headers returned in our response. Remember cookies are just a string of text so the cookie header just contains our keys and values that must be encoded into that string. Cookies can get quite complex, in particular cookie values should be URL-encoded so that if your cookie's value contains, for example, the `=' character, then this won't be misintepreted as the key-value assignment operator. Note that when testing cookies it is a good idea to use your browser in private mode so that the cookies are automatical cleared. You sometimes also have to refresh your browser a couple of times before the cookies are picked up because the cookies are set are the response which also renders the page so we only see them at the next request.
+
+\subsubsection{Query Parameters}
+\paragraph{} As HTTP is designed to be stateless, each request is independent so, just as we use cookies to persist information between requests, we can also use query parameters (also known as URL or address parameters) to send small amounts of data to the server as part of our request. The server can then parse these parameters and use them in constructing the response. Consider, for example, a blog site that has multiple pages of posts, you might want to access a post on a given page so a query parameter can be used to specify which ``page'' of results to return, for example \url{localhost:5000/posts?page=3} would be used to request the third page of posts.
+
+\paragraph{} To access the query parameters we use the request.url property as we did earlier. Now however we check for a specic parameter in the query, e.g. ``name'' and then do something with that and it's associated value, if it's present.
+
+\begin{lstlisting}
+const { createServer } = require("http");
+
+const PORT = process.env.PORT || 5000;
+
+const server = createServer();
+
+server.on("request", (request, response) => 
+{
+    const { query } = require("url").parse(request.url, true);
+    if (query.name) 
+    {
+        response.end(`You requested parameter name with value ${query.name}`);
+    } 
+    else 
+    {
+        response.end("Hello!");
+    } 
+});
+
+server.listen(PORT, () => 
+{
+    console.log(`starting server at port ${PORT}`);
+});
+\end{lstlisting}
+
+\paragraph{} \url{http://localhost:5000/about?name=simon}
+
+
+\paragraph{} Query parameters are a useful way to make our URL schemes, the organisation of our hierarchy of addresses, more flexible.
+
+\subsubsection{Request Payload}
+\paragraph{} Sometimes a request to our server will include a ``payload'', some data, perhaps a JSON document that we want to make available to the server.
+
+\begin{lstlisting}
+const { createServer } = require("http");
+
+const PORT = process.env.PORT || 5000;
+
+const server = createServer();
+
+server.on("request", (request, response) => 
+{
+
+if (request.method === "POST") {
+    let data = "";
+    request.on("data", chunk => {
+      data += chunk;
+    });
+
+    request.on("end", () => {
+      try {
+        const requestData = JSON.parse(data);
+        requestData.ourMessage = "success";
+        response.setHeader("Content-Type", "application/json");
+        response.end(JSON.stringify(requestData));
+      } catch (e) {
+        response.statusCode = 400;
+        response.end("Invalid JSON");
+      }
+    });
+  } else {
+    response.statusCode = 400;
+    response.end("Please POST a JSON object");
+  }
+
+});
+
+server.listen(PORT, () => 
+{
+    console.log(`starting server at port ${PORT}`);
+});
+\end{lstlisting}
+
+\paragraph{} As this is a POST requst we need to call it using curl, for example, \url{$ curl -X POST -d '{"message":"hello world"}' http://localhost:5000}
+
+
+
+\paragraph{} The most important thing to take away from this investigation is the great number of things that the server is doing when we make a request. It's tempting to underestimate the work that is done to service a single request, just because we clicked on a hyperlink.
+
+
 \section{Next}
 \paragraph{} There are a whole bunch of Node.JS libraries that we can build on so that Node can act as a complete server-side web language. These libraries will help us to construct our own web-apps and APIs so that we can generate our user interface on-the-fly based upon what our user wants. This is how many highly interactive websites function and developing skills in this area will enable us to begin the process of going beyond the (mostly-) static websites that we've developed so far. 
 
-%\subsection{MongoDB}
-%\paragraph{}
+
 
 \end{document}
 

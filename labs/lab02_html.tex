@@ -138,7 +138,12 @@
 \paragraph{} At the end of the practical portion of this topic you will:
 
 \begin{itemize}
-\item \end{itemize}
+\item Create HTML documents
+\item Add content to HTML documents using elements
+\item Specialise elements by setting their attributes
+\item Create \emph{hypertext} documents by using links
+\item Have some small examples of HTML websites that you can build on and elaborate over subsequent week, partly as a learning exercise, partly to kick-start your development of a personal portfolio, and partly to stimulate your interest in the variety of types of sites we can implement for the web.
+\end{itemize}
 
 
 \begin{framed}
@@ -147,6 +152,8 @@
 
 
 \section{Activities}
+
+\paragraph{} You should, unless otherwise indicated, try out all of the code examples shown on lab sheets for yourself. Whilst this lab sheet can describe an outcome, this is no substitute for experiencing that outcome for yourself and allowing it to spur some experimental exploration.
 
 \subsection{HTML Documents}
 \paragraph{} We saw a simple HTML document last week that looked like this:
@@ -184,6 +191,8 @@
 </html>
 \end{lstlisting}
 
+\paragraph{} We can also remove various other aspects of our HTML to varying effect. Try this. Take your example HTML and experiment with removing various elements then looking to see what the effect is in your browser. It is worth trying this in a couple of browsers if you have some them available so that you can see what effect different HTML problems might have on the resulting rendered page. At the very least you should experiment with adding content that isn't surrounded by tags, omitting entired opening, and closing, tags, and omitting parts of a tag. For example, what happens when you forget to close a tag properly and leave off the final $>$? What happens if you do this on the opening tag of a pair rather than the closing tag? Why do you think there might be a difference? How do differnt browsers handle these circumstances? Whilst trying these exercises you should also have the browsers console window open so that you can see any messages that the browser prints.
+
 \subsection{HTML Elements}
 \paragraph{} It is from this minimal set of tags in the HTML document example above that all possible valid HTML documents are built. One of the core ideas in HTML is that it is a tree structure. It starts with a root tag pair, the HTML tags, which enclose other pairs of tags, usually at this stage the head and body tags, which in turn enclose other pairs of tags, until you're done, i.e. you've described all of the text that you want the document to hold. These tag paris are called Elements. Each element has a start tag and an end tag, for example, a start tag might look like this: $<$title$>$ and an end tag might look like this: $<$/title$>$. Notice that the sole difference between the two tags is a single backslash character.
 
@@ -213,12 +222,13 @@
 \begin{itemize}
 \item Explore the other headings that are available and see how they look in the browser
 \item Make an HTML document that shows all the heading elements on one page.
+\item Experiment with a variety of combinations of heading elements to see how these simple tags make a huge difference to the presentation of a page.
 \end{itemize}
 
 \paragraph{} Paragraphs are a basic building block for organising writing within a larger textual document so there is also a paragraph element using the $<$p$>$ tags.
 
 \begin{itemize}
-\item Make an HTML document that incorporates several paragraphs of text. You can select some text from a news website, or better yet, investigate ``greeking'' or ``lorem ipsum'', a way to generate blocks of text for testing websites before the `copy' is written. There are many websites that generate lorem ipsum text as a service for you to copy and paste into website designs whilst you are waiting for the content to be written. This can be very useful.
+\item Make an HTML document that incorporates several paragraphs of text. You can select some text from a news website, or better yet, investigate ``greeking'' or ``lorem ipsum'', a way to generate blocks of text for testing websites before the `copy', the content of the page, is written. There are many websites that generate lorem ipsum text as a service for you to copy and paste into website designs whilst you are waiting for the content to be written. This can be very useful as you will often want to start experimenting with page layout and presentation before you have the full content of your site. Often a site grows over time, so developing a design that doesn't rely on specific content, but looks good regardless, is useful.
 \end{itemize}
 
 \paragraph{} We probably want to have some more visual appeal that just using text in our html document. We can include images very easily using the $<$img$>$ tag, e.g.
@@ -318,8 +328,17 @@ Turn the `Web Tech'', ``School of Computing'', and ``Edinburgh Napier University
 
 \paragraph{} Links provide not only the basis for Hypertext but enable us to break down our own site into separate pages and navigate between them. For this reason they are possibly one of the most important tags available in HTML. We can do without styles, or ways differentiate a paragraph from a heading, but we can't do without hyper-links.
 
-\subsection{Challenge}
-\paragraph{} Create a set of simple and short web pages to describe yourself and your career at Napier. If that sounds boring you can choose another topic, perhaps a hobby or something else that you are interested in. Where appropriate you should include links to external resources, e.g. to various pages in the Napier website. You should be considering how to break things down into separate pages, and also what internal links you might need for navigation within each page and between your pages. For example, starting within a homepage, i.e. index.html you might have links to a personal page about you, and a course page about your degree. Your course page might be broken down by year, and each year in turn by module. At each point you should be considering the best HTML elements to apply to markup your page. Don't worry too much about how things look at this point, next week we'll look at prettifying things using CSS, what we want for now is nicely organised information that we can navigate in the browser.
+\subsection{Challenges}
+\paragraph{} In the following, don't worry too much about making your pages look nice. We will address that in other labs, but for now, think about structure and content, presenting your ideas in a clear way using pure HTML. We will return to these challenges over subsequent weeks to elaborate on them with design and interactive elements as appropriate so don't ignore them. By the end of this module you will have developed your own set of websites of various types and purposes. Think of these not just as a framework for meeting the various learning objectives of the module, but also as a way to starting building your own portfolio of work. There is nothing to stop you elaborating on any of these exercises and making your own, unique demonstrators of your skills as we progress. If you are happy with what you've built then you can consider deploying some, or all\footnote{or even none :D} of your sites\footnote{We'll consider deployment of websites later in the module}.
+\begin{enumerate}
+\item Create a set of simple and short web pages to describe yourself and your career at Napier. If that sounds boring you can choose another topic, perhaps a hobby or something else that you are interested in. Where appropriate you should include links to external resources, e.g. to various pages in the Napier website. You should be considering how to break things down into separate pages, and also what internal links you might need for navigation within each page and between your pages. For example, starting within a homepage, i.e. index.html you might have links to a personal page about you, and a course page about your degree. Your course page might be broken down by year, and each year in turn by module. At each point you should be considering the best HTML elements to apply to markup your page. Don't worry too much about how things look at this point, next week we'll look at prettifying things using CSS, what we want for now is nicely organised information that we can navigate in the browser. The important thing to consider in this exercise is how to develop and expose the ``hypertext'' structure of the information.
+\item Find the CIA world fact book website. You might find a search engine useful for this. The factbook contains information about various countries around the world. Have a look at the kind of information available and design a simple set of pages that reproduces some of the factbooks content. One approach might be to start with an index or ``home'' page that introduces things and lists the countries that you'll cover. For each country you will create a different pages containing information about the country. Consider the various ways that this information can be organised and interlinked to provide different ways of navigating through the text. Try to come up with a strategy for including links in your pages to allow you to navigate amongst them. If necessary edit your homepage to reflect this change in navigation. For example, you might have different pages that organises countries by population density, or GDP, or geographical area.
+\item Create a set of pages that implement a simple ``choose your own adventure'' style game. The `home' page should introduce your story and set the scene, at the bottom of the page there should be links to other pages that further the story in different ways, depending upon which link you choose. Your reader/player should be able to make selections and move throught the various pages/storylines, until you reach a termination page that concludes the story. The concluding page should have a link back to the home page so that a player can start again. One way to get started is just to break an existing story down into several pages in which each page has a link to the next page. Once you have that storyline implemented, return to an earlier page and alter the link to make it a choice between options, then implement pages for the alternative options, in each case adding whichever pages are necessary to complete the storyline. In some cases you might want to loop back to an early place in the story to allow the user to make another choice, if this works with the overall story that you're telling. In other cases choices might lead to differnt conclusions or different paths might lead to the same ending via various storylines. You might want to sketch out some ideas on paper to help you keept this increasingly tangled web organised.
+\end{enumerate}
+
+\paragraph{} Don't worry if you're not sure how to do all of what you want to do yet. This is why these exercises are challenges. It is als fine to ``build one to throw away''. Try out a test spike to get something working on screen, then, early in the process, before you've put in too much effort, decide whether things are developing the way you want and whether to continue or start again. Often in trying a test spike we learn enough about the problem and potential solutions that we are better equipped to make a second, improved, attempt.
+
+\paragraph{} Speak to your classmates about how they are approaching things and see if you can come up with good ideas. You can also research how others have built similar sites online to see if you can gain inspiration. Remember that when you look at websites online, you can also inspect the code that drives the website, the HTML sourcecode, and in many cases, although developers will sometimes try to hinder you, the CSS, JavaScript and other resources, are also available to inspect, so you can see how others have achieved things. If you find something that you like then you should consider how to incorporate those aspects into your own sites where it is appropriate to do so\footnote{Note that this doesn't mean to copy and paste another's code, but to take inspiration for how to implement your own solution to a given problem.}.
 
 \subsection{Finally}
 \paragraph{} If you want some additional practise then the W3Schools HTML exercises are a great place to start:
