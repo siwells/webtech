@@ -397,7 +397,13 @@ var server = app.listen(5000, "127.0.0.1", function () {
 \end{figure}
 
 
-\paragraph{} Once a skeleton is generated we can use npm to install all the Node modules that our new express app needs, e.g.
+\paragraph{} Once a skeleton is generated we can use npm to install all the Node modules that our new express app needs. First, move into the newly created `helloapp' folder:
+
+\begin{lstlisting}[style=DOS]
+    > cd helloapp
+\end{lstlisting}
+
+\paragraph{} Now we can install the node modules required by the generated express skeleton:
 
 \begin{lstlisting}[style=DOS]
     > npm install
@@ -417,7 +423,7 @@ to:
 var port = normalizePort(process.env.PORT || '5000');
 \end{lstlisting}
 
-\paragraph{} Now let's run our app\footnote{If you're on Mac or Linux then do this instead: \$ DEBUG=myapp:* npm start:}:
+\paragraph{} Now let's run our app\footnote{If you're on Mac or Linux then do this instead: \$ DEBUG=myapp:* npm start}:
 
 \begin{lstlisting}[style=DOS]
     > set DEBUG=myapp:* & npm start
