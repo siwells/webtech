@@ -156,6 +156,12 @@
 
 \paragraph{} Once you've extracted the Node files we should have a folder containing some useful tools. The most important here is node.exe which we can use to run the Node program, but we'll get to that in the next section...
 
+\paragraph{} If you are on Windows in an ENU lab then you will likely have to add Node to your path, but you can only do so temporarily using the command line, and must repeat the procedure each time we log in. Add your node folder to the Window Path from the command line like so (taking care to replace ``C:\textbackslash Program Files\textbackslash Nodejs'' with the actual path to where your node folder is):
+
+\begin{lstlisting}[style=DOS]
+SET PATH=C:\Program Files\Nodejs;%PATH%
+\end{lstlisting}
+
 \paragraph{} If you're on a Mac then use homebrew to install Node, e.g.
 
 \begin{lstlisting}[style=DOS]
