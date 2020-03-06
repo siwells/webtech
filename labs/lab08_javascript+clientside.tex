@@ -104,7 +104,7 @@
 
 \textsc{\Large Edinburgh Napier University}\\[1.5cm]
 
-\textsc{\LARGE \bfseries SET08101 Web Tech}\\[0.5cm]
+\textsc{\LARGE \bfseries SET08101/SET08401 Web Tech}\\[0.5cm]
 
 \hrulefill \\[0.4cm]
 {\huge \bfseries Lab 4 - JavaScript \\[0.4cm] }
@@ -138,10 +138,8 @@
 \paragraph{} At the end of the practical portion of this topic you will:
 
 \begin{itemize}
-\item Use inline JavaScript
-\item Use $<$script$>$ tags
-\item Use external JavaScript files
 \item Update HTML \& CSS via the DOM
+\item Interact with the Browser window
 \end{itemize}
 
 
@@ -156,94 +154,17 @@
 
 
 \section{Activities}
-\paragraph{} We're going to tackle JavaScript a little like we tackled CSS, by examing how JavaScript can interact with HTML.
+\paragraph{} We now have all of our web technologies, HTML, CSS, and JavaScript, in place. So we can combine them and exploit them to build more interesting and dynamic web sites. Last week we merely explored JavaScript as ``yet another programming language'', discovering that it had all of the parts that we would expect a programming langue to provide us with. Now however we want to use it for what it was created for, to enable increased functionality on our web pages, beyond what mere HTML and CSS can support.
 
-\section{Inline JavaScript}
-
-\paragraph{} In rare circumstances we might want to add some JavaScript direct to an HTML element like so:
-
-\begin{lstlisting}
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>SET08101 - Inline JavaScript</title>
-    </head>
-    <body>
-        <p><a href="#" onClick="alert('Hello World');">Click Me</a></p> 
-    </body>
-</html>
-\end{lstlisting}
-
-\paragraph{} Congratulations, you just wrote your first JavaScript\footnote{Unless you've written some JavaScript before, in which case, well done, you just wrote some more JavaScript.}. We won't often do this, just like we won't often attach CSS styles direct to an element within HTML. However it does keep things incredibly simple.
-
-\paragraph{} Load up the HTML file that you just wrote and try it out. Now let's modify that a little:
+\subsection{Preliminaries}
+\paragraph{} This week we shall mostly use a single, simple, external javascript file and an associated simple host HTML document to bootstrap our JavaScript into the browser so that it can fulfil its purpose. Whilst some of our exercises might demonstrate things in different ways for clarity, such as some of the interaction with the DOM examples, we can always use the following as a starting place to develop some new functionality.
 
 \begin{lstlisting}
 <!DOCTYPE html>
 <html>
     <head>
-        <title>SET08101 - Inline JavaScript</title>
-    </head>
-    <body>
-        <p><a href="#" onClick="console.log('Hello World')">Click Me</a></p> 
-    </body>
-</html>
-\end{lstlisting}
-
-\paragraph{} This time you'll notice that there was no longer any alert box displayed when we clicked the link. Instead, to see where our output went, we need to find our \emph{console}. The console is provided by your browser as part of the Developer Tools\footnote{If you can remember right back to the week one, this was one of the first things that we got to grips with.}. The console is a bit like a command line built into your web browser that will display the output of calls to the console.log() function. This is a really useful function because we'll use it a lot to get output from our code, for example, when we want to test that the value actually stored in a variable actually matches what we think it is\footnote{There are alternatives to outputting the values of variables when we are developing, but this is a useful place to start.}.
-
-\paragraph{} Something else to note in our two example so far is the use of \emph{quoting}; that is the use of the ` and `` marks around things. Note that double quotes were used to surround everything associated with onClick= and that within the onClick single quotes were used around the string `hello world'. There is no rule that says we have to use single quotes inside double quotes, we could have had things the other way around, we just have to be consistent, i.e. ensure that pairs of single quotes match each other and similar for double quotes. We also need to remember that we can't have a pair of double quotes within another set of double quotes, as the opening inner double quote will close the outer double quote and the rest of the line will be, at least, a syntax error. Try it out a bit so you get the idea, e.g.
-
-\begin{itemize}
-\item onClick=`console.log(``Hello World'')'
-\item onClick=`console.log(`Hello World')'
-\item onClick=``console.log(``Hello World'')''
-\end{itemize}
-
-\paragraph{} For each one, see what happens in the console. Get used to checking the output in the console. It's not just for the expected output from calls to console.log() but also will tell you when there are errors.
-
-\paragraph{} There are other HTML events, besides onClick, that we can respond to, for example:
-
-\begin{lstlisting}
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>SET08101 - Inline JavaScript</title>
-    </head>
-    <body>
-        <p><a href="#" onMouseOver="alert('Hello');">Hover over me</a></p> 
-    </body>
-</html>
-\end{lstlisting}
-
-\paragraph{} Note the difference between user interaction, i.e. when the event triggers based on your moving your pointer.
-
-\begin{lstlisting}
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>SET08101 - Inline JavaScript</title>
-    </head>
-    <body>
-        <p><a href="#" onMouseOut="alert('Hello');">Hover over me</a></p> 
-    </body>
-</html>
-\end{lstlisting}
-
-\paragraph{} Different events give use lots of control over how the user can interact with our pages and the elements that make up our pages. Therea are many other HTML DOM events that your code can respond to. Explore them here: \url{https://www.w3schools.com/jsref/dom_obj_event.asp}.
-
-\subsection{Using Script Blocks}
-\paragraph{} As for CSS, using inline JavaScript feels a bit hacky, good enough for trying something out but not so good if we want to build a larger or more manageable site. Remember, the more mixed up and disorganised things are, the less easily they can be found when needed, or altered with good knowledge of any possible side effects.
-
-
-\begin{lstlisting}
-<!DOCTYPE html>
-<html>
-    <head>
-        <script type="text/javascript">
-        function helloFunction() { alert('Hello Napier'); }
-        </script>
-        <title>SET08101 - External JavaScript</title>
+         <script src="code.js"></script> 
+        <title>SET08101 - JavaScript</title>
     </head>
     <body >
         <p><a href="#" onClick="helloFunction();">Click Me</a></p>
@@ -251,26 +172,7 @@
 </html>
 \end{lstlisting}
 
-\subsection{External JavaScript Files}
-
-\paragraph{} Just as with CSS, we can also put all of our JavaScript into external .js files which can be linked to any html that needs access to the JavaScript code contained therein. This way we can update our JavaScript in just one place, and have our changes available everywhere they are needed. An additional advantage is that external JavaScript files can be cached, this means it is basically saved for reuse. If two pages use the same JavaScript external file then instead of loading it twice, as would happen if the JavaScript was between $<$script$>$ tags in the respective HTML files, instead it is downloaded for the first page that your user navigates to then is saved in the browser and reused, but not re-downloaded, when referenced from the other file. This can lead to large saving in network bandwidth but also better performance of your sites as loading from local memory is nearly always much faster than reloading across the network. 
-
-\paragraph{} Let's look at an example. Create a text file called external.html and place the following code into it:
-
-\begin{lstlisting}
-<!DOCTYPE html>
-<html>
-    <head>
-         <script src="hello.js"></script> 
-        <title>SET08101 - External JavaScript</title>
-    </head>
-    <body >
-        <p><a href="#" onClick="helloFunction();">Click Me</a></p>
-    </body>
-</html>
-\end{lstlisting}
-
-\paragraph{} Now create a second text file in the same folder as external.html called hello.js and place the folowing code in it:
+\paragraph{} Now create a second text file in the same folder as external.html called code.js and place the folowing code in it:
 
 \begin{lstlisting}
 function helloFunction(){ 
@@ -278,11 +180,6 @@ function helloFunction(){
 }
 \end{lstlisting}
 
-\paragraph{} As with CSS files, we can place our JavaScript files into their own folders but we must then give the \emph{path} to our JavaScript within the script tag.
-
-\paragraph{} Note that you will see $<$script$>$ tags placed in various places within an HTML file, for example, within the $<$head$>$ or within the $<$body$>$ but either is valid.
-
-\paragraph{} From this point on you should decide whether to use script blocks or external JavaScript files. It can be easily when trying things out to do everything on the same page, but as soon as you start working on a larger project it can be worth extracting everything out into it's own file.
 
 \subsection{Interacting with the DOM}
 
@@ -356,7 +253,7 @@ function helloFunction(){
 \end{lstlisting}
 
 
-\paragraph{} Try this out and experiment a little with differen tags. Try setting things up so that each time you click the link a new element will be added to an ordered list.
+\paragraph{} Try this out and experiment a little with different tags. Try setting things up so that each time you click the link a new element will be added to an ordered list.
 
 \paragraph{} We can also mix HTML, CSS, and JavaScript, for example:
 
@@ -421,11 +318,232 @@ function helloFunction(){
 
 \paragraph{} See if you can come up with a way to change the colour of your paragraph and also update the message to match the colour. Consider how you might switch between three, or even four, colours instead of just two.
 
+\paragraph{} Revisit the examples from above and attempt to separate out the HTML, CSS, and JS into different source files to get a better structure and organisation.
+
+\subsubsection{Interact with the Browser Window}
+\paragraph{} Remember that all the components of our web page are represented internally within our web browsers in terms of a data structure called the DOM. The DOM is a tree structure, a hierarchical organisation of the elements that make up our page. Everything within our page can be accessed from a single root object, called the \emph{window}.
+
+\begin{lstlisting}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SET08101 - Interacting with the Window</title>
+    </head>
+    <body >
+        <script>
+            for (property in window)
+            {
+                if(property) {console.log(property)}
+            }
+        </script>
+    </body>
+</html>
+\end{lstlisting}
+
+\paragraph{} This should give you an idea of the range of possible parameters that the window object gives you access to. It will be a reasonably long list, and will differ across browsers. You should also note that many of the properties also have additional parameters, such as screen, which has things like screen.height and screen.width. So our exploration of things that we can access doesn't stop here. Note that you can also explore things directly in the web console as a more interactive way of investigating. This can be useful as the web console provides suggestions and auto-complete (if you hit tab after highlighting the line to complete from the suggestions).
+
+\paragraph{} Why not try adapting the above example to update the HTML page itself with the output of the properties available from the window object\footnote{\emph{Hint:} You can use a similar loop but probably want to append an HTML element to the screen, perhaps using `+=' on each iteration.}
+
+We can interact with our window to control the part of the page that is displayed. For example, using the scrollBy method of the window object. Let's look at a simple example, try to work out exactly what is happening all the way through this one:
+
+\begin{lstlisting}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Interacting with the Window</title>
+    </head>
+    <body >
+        <div id="output"></div>
+
+        <script>
+            var out = document.getElementById("output");
+            for(i=1; i<2000; i++)
+            {
+                out.innerHTML += i+ " ";
+            }
+            window.scrollBy(0, 100);
+            
+        </script>
+    </body>
+</html>
+\end{lstlisting}
+
+\paragraph{} Note that you should probably make sure that your browser window is reasonably small as the scrollBy method only works when the content of the page is bigger than the available window resulting in scroll bars. Our scrollBy method lets us choose the x and y dimensions to scroll by.
+
+\paragraph{} We can go as far as creating new windows if we want to. Note that this example might get blocked by our browsers pop-up control functionality, mainly because pop-ups were heavily misused by web designers to the point where people began installing pop-up blockers then similar functionality was eventually built in. You'll also probably want to change the URL of the window that you open to something more interesting, either a local html file or a site you might want to visit instead of ``test.html'' in the example code...
+
+\begin{lstlisting}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Interacting with the Window</title>
+    </head>
+    <body >
+        <div id="output"></div>
+
+        <script>
+            window.open("test.html", "new window", "top=100, left=100, width=640, height=480, status=yes");            
+        </script>
+    </body>
+</html>
+\end{lstlisting}
+
+\paragraph{} However, because the only person with direct access to the web console is the user, you should be able to directly type the window.open line into your console and it should bypass the pop-up blocker.
+
+\paragraph{} We can query our browser to find out more about it by using the `navigator' property. For example, let's retrieve the browser's name, codename, and version number (amongst a whole heap of other information).
+
+\begin{lstlisting}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Interacting with the Window</title>
+    </head>
+    <body >
+        <div id="output"></div>
+
+        <script>
+            var out = document.getElementById("output");
+            out.innerHTML += window.navigator.appName 
+                + " " + window.navigator.appVersion 
+                + " " + window.navigator.appCodeName;
+        </script>
+    </body>
+</html>
+\end{lstlisting}
+
+\paragraph{} Our browser is usually displaying a specific location, and we can access that information from our code like so:
+
+\begin{lstlisting}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Interacting with the Window</title>
+    </head>
+    <body >
+        <div id="output"></div>
+
+        <script>
+            var out = document.getElementById("output");
+            out.innerHTML += "Href: " + window.location.href 
+                + "<br>Protocol: " + window.location.protocol
+                + "<br>Host: " + window.location.host
+                + "<br>Path:" + window.location.pathname
+                + "<br>Hash: " + window.location.hash;
+        </script>
+    </body>
+</html>
+\end{lstlisting}
+
+\paragraph{} In the above listing we've broken down the content of our address bar into manageable chunks that we could, if necessary use in our code. 
+
+\paragraph{} There is frequently also a history of previous pages that have been visited, again, information that we can access and manipulate. Open a new browser window and navigate to a web site of your choice\footnote{such as, perhaps, wikipedia}, then follow a few links. Open the browser console and access the window.history.length data then try out the window.history.back(), and window.history.forward() functions. The number of elements in the history also means that you can jump forwards and backwards using the history.go() function and passing it a positive or negative number as an offset from the current page, i.e. to move forward 2 pages then history.go(2) and to move to the previous page then history.go(-1). Note that this browser API doesn't give us access to the specific pages through JavaScript as this would be a big security risk.
+
+%\begin{lstlisting}
+
+%\end{lstlisting}
+
+
+
+\subsection{Interacting with the User}
+
+\paragraph{} In the preliminary above, and in the last topic, we used an alertbox to interact with our user like so:
+
+\begin{lstlisting}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Interacting with the user</title>
+    </head>
+    <body >
+        <script>
+            
+        window.alert('hello');    
+        </script>
+    </body>
+</html>
+\end{lstlisting}
+
+
+
+\paragraph{} It turns out that there are two other dialogs that we can get by default. After the alertbox, the second is the confirmation box and the third is the prompt box. Let's try them out. First the confirmation:
+
+
+\begin{lstlisting}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Interacting with the user</title>
+    </head>
+    <body >
+        <script>
+        window.confirm('are you sure?');   
+        </script>
+    </body>
+</html>
+\end{lstlisting}
+
+\paragraph{} We can also get the result of choosing one or the other button and use that in our code, for example:
+
+\begin{lstlisting}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Interacting with the user</title>
+    </head>
+    <body >
+        <script>
+        var result;
+        result = window.confirm('are you sure?');
+        console.log(result);    
+        </script>
+    </body>
+</html>
+\end{lstlisting}
+
+\paragraph{} Let's now look at the prompt box. It works fairly similarly to the confirm box:
+
+
+\begin{lstlisting}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Interacting with the user</title>
+    </head>
+    <body >
+        <script>
+        window.prompt('What is your name?');    
+        </script>
+    </body>
+</html>
+\end{lstlisting}
+
+\paragraph{} Similar to the confirmation box we can also access the value that our user typed into the prompt so that we can use it in our code. For example:
+
+\begin{lstlisting}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Interacting with the user</title>
+    </head>
+    <body >
+        <script>
+        var result;
+        result = window.prompt('What is your name?');
+        if(result != null)
+        {   
+            console.log(result);
+        }
+        </script>
+    </body>
+</html>
+\end{lstlisting}
+
+
 \subsection{Challenges}
 \paragraph{} As in previous weeks, consider how the challenges we've already addressed can be enhanced using this weeks topic. What would JavaScript enable you to do on your set of personal pages, on your world factbook site, or on your choose your own adventure game? You'll notice that some types of site lend themselves to useful JavaScript that really enhances the user experience whilst for other sites including JavaScript can be a little gimicky.
 
 \begin{enumerate}
-\item Create a simple dungeon crawler game that uses JavaScript to generate what is found in each room of a dungeon as you explore through it. Use a set of pages to implement the ``rooms'' of the dungeon, with each page having a link to the next location, or room, perhaps with links to a variety of rooms. In each room use JavaScript to generate the contents of the room. Start with whether the room contains treasure, perhaps of varying types. Then think about a monster to defend the treasure. Perhaps you will want to battle the monster? You can elaborate on this to a great degree. Research how you might store information about your player and the treasure that's been collected or the health of your player\footnote{Hint: there are various ways to store data in the user's browser, e.g. cookies, web storage, and indexed DB}. If the player dies then you might want to direct your player towards a suitable ending page. Similarly if they get through all of the rooms and out of the dungeon safely then they might get a reward page of some sort.
+\item Create a simple dungeon crawler game that uses JavaScript to generate what is found in each room of a dungeon as you explore through it. Use a set of pages to implement the ``rooms'' of the dungeon, with each page having a link to the next location, or room, perhaps with links to a variety of rooms. In each room use JavaScript to generate the contents of the room. Start with whether the room contains treasure, perhaps of varying types. Then think about a monster to defend the treasure. Perhaps you will want to battle the monster? You can elaborate on this to a great degree. Research how you might store information about your player and the treasure that's been collected or the health of your player\footnote{\emph{Hint:} there are various ways to store data in the user's browser, e.g. cookies, web storage, and indexed DB}. If the player dies then you might want to direct your player towards a suitable ending page. Similarly if they get through all of the rooms and out of the dungeon safely then they might get a reward page of some sort.
 \item Consider how you might integrate JavaScript into your solutions to the challenges in previous weeks. You might find that some sites don't lend themselves well to the additional dynamicism of JavaScript whilst for other, JavaScript offers an opportunity to develop features that just couldn't be achieved with HTML \& CSS alone. For example, your personal pages might not require much JavaScript, although I could imagine a utility that calculated your overall year and degree grades based on the individual grades for assignments and their relative weightings. Similarly, The world factbook based challenge might not lend itself to supporting a lot of JavaScript functionality, however, perhaps a function on each page that checked whether data had been updated in the official factbook and updated your local copy might be useful as much of the data associated with countries, for example, population and GDP data, is dynamic on annual timescales. Finally, the choose your own adventure challenge perhaps offers the greatest opportunities for JavaScript functionality; you could incorporate some more dynamic story aspects to the game, perhaps selecting different sections of prose depending, or enabling a random encounter of some sort that alters the available story paths. Remember that JavaScript gives you access to many APIs within the browser that can enable you to incorporate things like generated graphics (using the canvas element) or sound (using the web audio API). Whilst these are not right for many sights, sound for example is downright annoying when intrusive, unexpected, and uncontrollable, it is very effective when used correctly and with sufficient user control.
 \end{enumerate}
 
