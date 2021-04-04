@@ -1,0 +1,125 @@
+\nobreakspace {}\hfill \textbf {Page}\par 
+\contentsline {chapter}{\numberline {1}Administrivia}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Introduction}{1}{section.1.1}%
+\contentsline {paragraph}{}{1}{section*.2}%
+\contentsline {paragraph}{}{1}{section*.3}%
+\contentsline {paragraph}{}{1}{section*.4}%
+\contentsline {paragraph}{}{1}{section*.5}%
+\contentsline {paragraph}{}{2}{section*.6}%
+\contentsline {section}{\numberline {1.2}Reading This Book}{2}{section.1.2}%
+\contentsline {paragraph}{}{2}{figure.caption.8}%
+\contentsline {chapter}{\numberline {2}The World Wide Web}{3}{chapter.2}%
+\contentsline {paragraph}{}{3}{section*.9}%
+\contentsline {paragraph}{}{3}{section*.10}%
+\contentsline {paragraph}{}{4}{section*.11}%
+\contentsline {paragraph}{}{4}{section*.12}%
+\contentsline {paragraph}{}{4}{section*.13}%
+\contentsline {paragraph}{}{5}{section*.14}%
+\contentsline {section}{\numberline {2.1}The Internet}{5}{section.2.1}%
+\contentsline {paragraph}{}{5}{section*.15}%
+\contentsline {paragraph}{}{5}{section*.16}%
+\contentsline {paragraph}{}{5}{section*.17}%
+\contentsline {paragraph}{}{5}{section*.18}%
+\contentsline {paragraph}{}{5}{section*.19}%
+\contentsline {paragraph}{}{5}{section*.20}%
+\contentsline {paragraph}{}{6}{section*.21}%
+\contentsline {section}{\numberline {2.2}Internet Protocols}{6}{section.2.2}%
+\contentsline {paragraph}{}{6}{section*.22}%
+\contentsline {paragraph}{}{6}{section*.23}%
+\contentsline {paragraph}{}{6}{section*.24}%
+\contentsline {paragraph}{}{7}{section*.25}%
+\contentsline {section}{\numberline {2.3}The HyperText Transfer Protocol (HTTP)}{7}{section.2.3}%
+\contentsline {paragraph}{}{7}{section*.26}%
+\contentsline {paragraph}{}{7}{section*.27}%
+\contentsline {paragraph}{}{8}{section*.28}%
+\contentsline {paragraph}{}{8}{section*.29}%
+\contentsline {paragraph}{}{8}{section*.30}%
+\contentsline {paragraph}{}{8}{section*.31}%
+\contentsline {section}{\numberline {2.4}Hypertext}{9}{section.2.4}%
+\contentsline {paragraph}{}{9}{section*.32}%
+\contentsline {paragraph}{}{9}{section*.34}%
+\contentsline {paragraph}{}{9}{section*.35}%
+\contentsline {paragraph}{}{9}{section*.36}%
+\contentsline {paragraph}{}{10}{section*.37}%
+\contentsline {paragraph}{}{10}{section*.38}%
+\contentsline {paragraph}{}{10}{section*.39}%
+\contentsline {section}{\numberline {2.5}Invention of the Web}{10}{section.2.5}%
+\contentsline {paragraph}{}{10}{section*.40}%
+\contentsline {paragraph}{}{11}{section*.42}%
+\contentsline {paragraph}{}{11}{section*.43}%
+\contentsline {paragraph}{}{12}{section*.44}%
+\contentsline {paragraph}{}{12}{section*.45}%
+\contentsline {section}{\numberline {2.6}HTML}{12}{section.2.6}%
+\contentsline {paragraph}{}{12}{section*.46}%
+\contentsline {paragraph}{}{12}{section*.47}%
+\contentsline {paragraph}{}{12}{section*.48}%
+\contentsline {paragraph}{}{13}{section*.49}%
+\contentsline {paragraph}{}{13}{section*.50}%
+\contentsline {section}{\numberline {2.7}A Basic Web Architecture - The Client-Server Model}{13}{section.2.7}%
+\contentsline {paragraph}{}{13}{section*.51}%
+\contentsline {paragraph}{}{13}{section*.52}%
+\contentsline {paragraph}{}{14}{section*.54}%
+\contentsline {paragraph}{}{14}{section*.55}%
+\contentsline {section}{\numberline {2.8}Servers}{14}{section.2.8}%
+\contentsline {paragraph}{}{14}{section*.56}%
+\contentsline {paragraph}{}{15}{section*.57}%
+\contentsline {paragraph}{}{15}{section*.58}%
+\contentsline {section}{\numberline {2.9}Web Clients \& User Agents}{15}{section.2.9}%
+\contentsline {paragraph}{}{15}{section*.59}%
+\contentsline {paragraph}{}{16}{section*.60}%
+\contentsline {section}{\numberline {2.10}Web Browsers}{16}{section.2.10}%
+\contentsline {paragraph}{}{16}{section*.61}%
+\contentsline {paragraph}{}{16}{section*.62}%
+\contentsline {paragraph}{}{16}{section*.63}%
+\contentsline {paragraph}{}{16}{section*.64}%
+\contentsline {paragraph}{}{16}{section*.65}%
+\contentsline {section}{\numberline {2.11}The Document Object Model (DOM)}{17}{section.2.11}%
+\contentsline {paragraph}{}{17}{section*.67}%
+\contentsline {paragraph}{}{17}{section*.68}%
+\contentsline {paragraph}{}{17}{section*.69}%
+\contentsline {paragraph}{}{17}{section*.70}%
+\contentsline {paragraph}{}{18}{section*.71}%
+\contentsline {paragraph}{}{18}{section*.72}%
+\contentsline {paragraph}{}{18}{section*.73}%
+\contentsline {section}{\numberline {2.12}Browser Developer Tools}{18}{section.2.12}%
+\contentsline {paragraph}{}{18}{section*.74}%
+\contentsline {paragraph}{}{18}{section*.75}%
+\contentsline {paragraph}{}{18}{section*.76}%
+\contentsline {paragraph}{}{18}{section*.77}%
+\contentsline {paragraph}{}{19}{section*.78}%
+\contentsline {paragraph}{}{19}{section*.80}%
+\contentsline {paragraph}{}{19}{section*.82}%
+\contentsline {paragraph}{}{20}{section*.84}%
+\contentsline {paragraph}{}{20}{section*.86}%
+\contentsline {paragraph}{}{21}{section*.88}%
+\contentsline {paragraph}{}{21}{section*.90}%
+\contentsline {paragraph}{}{22}{section*.92}%
+\contentsline {paragraph}{}{22}{section*.94}%
+\contentsline {paragraph}{}{23}{section*.96}%
+\contentsline {paragraph}{}{23}{section*.98}%
+\contentsline {paragraph}{}{24}{section*.100}%
+\contentsline {section}{\numberline {2.13}Summary}{24}{section.2.13}%
+\contentsline {paragraph}{}{24}{section*.101}%
+\contentsline {paragraph}{}{24}{section*.102}%
+\contentsline {paragraph}{}{24}{section*.103}%
+\contentsline {paragraph}{}{25}{section*.104}%
+\contentsline {chapter}{\numberline {3}Hypertext + Markup + Information + Semantics = HTML}{26}{chapter.3}%
+\contentsline {paragraph}{}{26}{section*.105}%
+\contentsline {chapter}{\numberline {4}CSS Intro \& Overview}{27}{chapter.4}%
+\contentsline {paragraph}{}{27}{section*.106}%
+\contentsline {chapter}{\numberline {5}HTML Page Layout Using CSS}{28}{chapter.5}%
+\contentsline {paragraph}{}{28}{section*.107}%
+\contentsline {chapter}{\numberline {6}Design for Hackers}{29}{chapter.6}%
+\contentsline {paragraph}{}{29}{section*.108}%
+\contentsline {chapter}{\numberline {7}Core JS}{30}{chapter.7}%
+\contentsline {paragraph}{}{30}{section*.109}%
+\contentsline {chapter}{\numberline {8}Client-Side JS: Browser APIs}{31}{chapter.8}%
+\contentsline {paragraph}{}{31}{section*.110}%
+\contentsline {chapter}{\numberline {9}Client-Side JS: Data Storage APIs}{32}{chapter.9}%
+\contentsline {paragraph}{}{32}{section*.111}%
+\contentsline {chapter}{\numberline {10}Client-Side JS: Sound \& Vision APIs}{33}{chapter.10}%
+\contentsline {paragraph}{}{33}{section*.112}%
+\contentsline {chapter}{\numberline {11}Deployment}{34}{chapter.11}%
+\contentsline {paragraph}{}{34}{section*.113}%
+\contentsline {chapter}{\numberline {12}Learning Environment Part \#1}{35}{chapter.12}%
+\contentsline {paragraph}{}{35}{section*.114}%
