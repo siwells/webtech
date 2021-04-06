@@ -48,7 +48,7 @@
 \caption{}
 \end{figure}
 
-\section{Interacting with <Audio> from JS}
+\section{Interacting with $<$Audio$>$ from JS}
 \paragraph{} In the last example we relied upon our user to control the playback of our audio files. For many circumstances this is perfectly fine. When we combine this with the ability to use CSS to style the presentation of the audio element we can build user interfaces that naturally integrate the audio playback amongst our other features. However, the degree to which this can be controlled in a reliable way is currently uncertain. Many of the styling options are available through the webkit pseudo extensions and thus may be subject to change in the details of how they function.
 \paragraph{} However this does raise an interesting point. We can set the hidden attribute to hide the player, or else we can set the controls attribute to false from JS which also hides the player, in both cases causing the audio controls to be hidden. This effectively removes control of the audio from most users, but is problematic from a usability and user experience perspective. Without audio controls the user can't stop annoying audio from playing, or has to use the system sound settings to adjust sound levels, so what is the solution if we don't want to expose the standard audio controls to our users but do want to give them a good user experience? The answer, as with many aspects of web development, is to use HTML, and especially JS, to build alternative interface elements.
 \paragraph{} Let's look at a simple example of that now:
