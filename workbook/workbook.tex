@@ -17,22 +17,12 @@
 \usepackage{float}
 \usepackage{tabularx}
 \usepackage{xcolor}
-%\usepackage[disable]{todonotes}
-%\usepackage{color, soul}
 \usepackage{amsmath}
-%\usepackage{algorithmicx}
-%\usepackage[noend]{algpseudocode}
-%\usepackage{algorithm}
 \usepackage{framed}
 \usepackage{subcaption}
-%\usepackage{titlepic}
-%\usepackage{fancyhdr}
-%\usepackage[simplified]{styles/pgf-umlcd}
 \usepackage{shorttoc}
 \usepackage{url}
-%\usepackage{paralist}
 \usepackage{dirtytalk}
-%\usepackage{verbatim}
 
 \definecolor{grey}{rgb}{0.9, 0.9, 0.9}
 \definecolor{dkgreen}{rgb}{0,0.6,0}
@@ -80,53 +70,45 @@
   frame=single,
 }
 
-%\renewcommand{\chaptername}{Topic}
-
-% New definitions
-%\algnewcommand\algorithmicswitch{\textbf{switch}}
-%\algnewcommand\algorithmiccase{\textbf{case}}
-%\algnewcommand\algorithmicassert{\texttt{assert}}
-%\algnewcommand\Assert[1]{\State \algorithmicassert(#1)}%
-% New "environments"
-%\algdef{SE}[SWITCH]{Switch}{EndSwitch}[1]{\algorithmicswitch\ #1\ \algorithmicdo}{\algorithmicend\ \algorithmicswitch}%
-%\algdef{SE}[CASE]{Case}{EndCase}[1]{\algorithmiccase\ #1}{\algorithmicend\ \algorithmiccase}%
-%\algtext*{EndSwitch}%
-%\algtext*{EndCase}%
-
-%\pagestyle{fancy}
-%\fancyhf{}
-%\fancyhead[RO, LE]{\small \rightmark}
-%\fancyfoot[RO, LE]{\small \thepage}
-
-\newcommand{\blank}[1]{\hspace*{#1}}
-
 \begin{document}
-
-\frontmatter
-
-\begin{titlepage}
-\vspace*{5cm}
+\clearpage
+\newcommand\nbvspace[1][3]{\vspace*{\stretch{#1}}}
+\newcommand\nbstretchyspace{\spaceskip0.5em plus 0.25em minus 0.25em}
+\newcommand{\nbtitlestretch}{\spaceskip0.6em}
+\pagestyle{empty}
 \begin{center}
-\includegraphics[width=.5\textwidth]{figures/EdNapUniLogoCMYK}~\\[1cm]
+\bfseries
+\nbvspace[1]
+\Huge
+{\nbtitlestretch\huge
+Web Technologies: Client-Side}
 
-\textsc{\Large Web Technologies}\\[1.5cm]
+\nbvspace[1]
+\normalsize
 
-\textsc{\LARGE \bfseries SET08101/401/801 }\\[0.5cm]
+COVERING DIVERSE TOPICS RELATED TO \\
+CLIENT SIDE WEB DEVELOPMENT AND\\
+FOCUSING ON THE CORE TRIUMVIRATE\\
+OF HTML, CSS, \& JS
 
-\hrulefill \\[0.4cm]
-{\huge \bfseries Notes \& Workbook 2020-2021 \\[0.4cm] }
-\hrulefill \\[1.5cm]
+\nbvspace[1]
+\small BY\\
+\Large DR SIMON WELLS\\[0.5em]
+%\footnotesize AUTHOR OF ``A WORKING ALGEBRA,'' ``WIRELESS TELEGRAPHY,\\
+%ITS HISTORY, THEORY AND PRACTICE,'' ETC., ETC.
 
-\begin{minipage}{0.4\textwidth}
-\begin{flushleft} \large
-\textbf{Dr Simon Wells} \\
-\end{flushleft}
-\end{minipage}
+\nbvspace[2]
 
-\vfill
+%\includegraphics[width=1.5in]{./graphics/pic37}
+\nbvspace[3]
+\normalsize
 
+%SCOTLAND\\
+\large
+SESQUIPEDALIA VERBA PUBLISHING LTD
+\nbvspace[1]
 \end{center}
-\end{titlepage}
+
 
 \setcounter{tocdepth}{2}
 \cleardoublepage
