@@ -19,6 +19,7 @@ In this module we're going to break down our existing web skills, fill in any ga
 - [Lecture 10](https://www.dropbox.com/s/92hplnqrtrxoesp/L10_sound%2Bvision.pdf?dl=1): Sound & Vision
 - [Lecture 11](https://www.dropbox.com/s/xir97pzdtwf94dv/L11_standards%2Baccessibility.pdf?dl=1): Standards & Accessibility
 - [Lecture 12](https://www.dropbox.com/s/rlq6re5rb5egckf/L12_deployment.pdf?dl=1): Deployment
+- Lecutre 13: Coda & Review
 
 # Workbook: Labs & Notes
 
@@ -34,6 +35,9 @@ In this module we're going to break down our existing web skills, fill in any ga
 - [Lab 10](https://www.dropbox.com/s/29fm5vcf2s2tjc8/lab10_sound%2Bvision.pdf?dl=1): Sound & Vision
 
 # Reading
+
+- [Core Text](https://www.dropbox.com/s/4akzve7yvzaw45t/workbook.pdf?dl=1): This is the main text which has been written specifically for this module
+
 
 The University Library has subscriptions to a heap of online resources. The following books are the core texts for this module this year and are available for download (in PDF or EPUB formats) using your Napier credentials:
 
@@ -57,8 +61,8 @@ The following aren't currently available via our library, but are worth getting 
 
 There are two practical skills assessments which together make up the full grade for this module.
 
-- [Coursework Assignment #1](https://www.dropbox.com/s/04myfz68kyjivjr/descriptor%231.pdf?dl=1) (40%)
-- [Coursework Assignment #2](https://www.dropbox.com/s/g50r54tv58vv9i1/descriptor%232.pdf?dl=1) (60%)
+- [Coursework Assignment #1]() (40%)
+- [Coursework Assignment #2]() (60%)
 
 # Resources
 
