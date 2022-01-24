@@ -10,7 +10,7 @@ In this module we're going to break down our existing web skills, fill in any ga
 - [Lecture 01](https://www.dropbox.com/s/yihemphbqcphgr9/L01_intro.pdf?dl=1): Introduction
 - [Lecture 02](https://www.dropbox.com/s/oap0mof6bb0emrw/L02_html.pdf?dl=1): Data (HTML5) - Hypertext & Hypermedia
 - [Lecture 03](https://www.dropbox.com/s/eox6drppllzhloe/L03_semantic.html.pdf?dl=1): Semantic HTML
-- [Lecture 04](https://www.dropbox.com/s/badyn1vfp8ymaps/L04_javascript.pdf?dl=1): Dynamics (Javascript) - Web Programming
+- [Lecture 04](https://www.dropbox.com/s/ec1mhl8eml71fiv/L04_css.pdf?dl=1): Style (CSS3) - Adding visual appeal & more
 - [Lecture 05](https://www.dropbox.com/s/ymufn540cpvk0ug/L05_design%2Bdev.pdf?dl=1): Principles of Web Design & Development
 - [Lecture 06](https://www.dropbox.com/s/p8b09xmqnvru5xj/L06_the.server.side.pdf?dl=1): Servers, Web Serving, & Web Scale
 - [Lecture 07](https://www.dropbox.com/s/uxh9h65lktehitf/L07_dynamic.sites.pdf?dl=1): Dynamic Sites using Node.JS
