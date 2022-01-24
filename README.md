@@ -26,7 +26,7 @@ In this module we're going to break down our existing web skills, fill in any ga
 - [Lab 02](https://www.dropbox.com/s/o7cpeclbwrbxwbs/lab02_html.pdf?dl=1): HTML
 - [Lab 03](https://www.dropbox.com/s/https://www.dropbox.com/s/s0v87w3jf0natyl/lab03_semantic.html.pdf?dl=1): Smantic HTML
 - [Lab 04](https://www.dropbox.com/s/69020p16qt5rsj0/lab04_css.pdf?dl=1): CSS
-- [Lab 05](https://www.dropbox.com/s/md9ewatkz9csrjv/lab05_design.pdf?dl=1): Design
+- [Lab 05](https://www.dropbox.com/s/3ljoenjdwtbnotj/lab05_css.layouts.pdf?dl=1): CSS Layouts
 - [Lab 06](https://www.dropbox.com/s/mlycacajfafa208/lab06_serverside.pdf?dl=1): Deployment
 - [Lab 07](https://www.dropbox.com/s/8e0p1n1bqg8xxth/lab07_node.pdf?dl=1): Beginning Node.JS
 - [Lab 08](https://www.dropbox.com/s/7r084h4clpk5a53/lab08_webapps.pdf?dl=1): Beginning server side web-apps with Node & Express
