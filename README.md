@@ -13,7 +13,7 @@ In this module we're going to break down our existing web skills, fill in any ga
 - [Lecture 04](https://www.dropbox.com/s/ec1mhl8eml71fiv/L04_css.pdf?dl=1): Style (CSS3) - Adding visual appeal & more
 - [Lecture 05](https://www.dropbox.com/s/p9r45nsy3vt5iat/L05_style.with.css.pdf?dl=1): Style with CSS
 - [Lecture 06](https://www.dropbox.com/s/86tuyy01sw7ogft/L06_design%2Bdev.pdf?dl=1): Principles of Web Design & Development 
-- [Lecture 07](https://www.dropbox.com/s/uxh9h65lktehitf/L07_dynamic.sites.pdf?dl=1): Dynamic Sites using Node.JS
+- [Lecture 07](https://www.dropbox.com/s/4xqfpwch5gt0kor/L07_javascript%2Bcore.pdf?dl=1): Dynamics (Javascript) - Web Programming
 - [Lecture 08](https://www.dropbox.com/s/raxma3iqh62u25r/L08_rest.pdf?dl=1): Web-apps & RESTful Design
 - Lecture 09: Datastores: JSON & Databases
 - Lecture 10: Web Standards & Accessibility
