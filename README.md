@@ -29,7 +29,7 @@ In this module we're going to break down our existing web skills, fill in any ga
 - [Lab 05](https://www.dropbox.com/s/3ljoenjdwtbnotj/lab05_css.layouts.pdf?dl=1): CSS Layouts
 - [Lab 06](https://www.dropbox.com/s/w6p92zkci2onsbj/lab06_design.pdf?dl=1): Design
 - [Lab 07](https://www.dropbox.com/s/fq1ky2ekdnqbr0r/lab07_javascript_core.pdf?dl=1): JavaScript Core
-- [Lab 08](https://www.dropbox.com/s/7r084h4clpk5a53/lab08_webapps.pdf?dl=1): Beginning server side web-apps with Node & Express
+- [Lab 08](https://www.dropbox.com/s/utbjpb58qj0vyuc/lab08_javascript%2Bclientside.pdf?dl=1): JavaScript: Client Side Web Programming
 - [Lab 09](https://www.dropbox.com/s/ihetckgwobyauet/lab09_api.design.pdf?dl=1): Designing APIs with REST & JSON
 - [Lab 10](https://www.dropbox.com/s/zduffpk8cfy68ja/lab10_datastores.pdf?dl=1): Datastores
 
