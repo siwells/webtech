@@ -14,7 +14,7 @@ In this module we're going to break down our existing web skills, fill in any ga
 - [Lecture 05](https://www.dropbox.com/s/p9r45nsy3vt5iat/L05_style.with.css.pdf?dl=1): Style with CSS
 - [Lecture 06](https://www.dropbox.com/s/86tuyy01sw7ogft/L06_design%2Bdev.pdf?dl=1): Principles of Web Design & Development 
 - [Lecture 07](https://www.dropbox.com/s/4xqfpwch5gt0kor/L07_javascript%2Bcore.pdf?dl=1): Dynamics (Javascript) - Web Programming
-- [Lecture 08](https://www.dropbox.com/s/raxma3iqh62u25r/L08_rest.pdf?dl=1): Web-apps & RESTful Design
+- [Lecture 08](https://www.dropbox.com/s/kifdozadga27i1b/L08_javascript%2Bclient.pdf?dl=1): Client Side Web Programming with JavaScript
 - Lecture 09: Datastores: JSON & Databases
 - Lecture 10: Web Standards & Accessibility
 - [Lecture 11](https://www.dropbox.com/s/7wztj1d5a2ggclb/L11_security%2Bprivacy.pdf?dl=1): Security & Privacy
