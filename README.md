@@ -30,7 +30,7 @@ In this module we're going to break down our existing web skills, fill in any ga
 - [Lab 06](https://www.dropbox.com/s/w6p92zkci2onsbj/lab06_design.pdf?dl=1): Design
 - [Lab 07](https://www.dropbox.com/s/fq1ky2ekdnqbr0r/lab07_javascript_core.pdf?dl=1): JavaScript Core
 - [Lab 08](https://www.dropbox.com/s/utbjpb58qj0vyuc/lab08_javascript%2Bclientside.pdf?dl=1): JavaScript: Client Side Web Programming
-- [Lab 09](https://www.dropbox.com/s/ihetckgwobyauet/lab09_api.design.pdf?dl=1): Designing APIs with REST & JSON
+- [Lab 09](https://www.dropbox.com/s/cs1z5dyqi63n9bi/lab09_data%2Bpersistence.pdf?dl=1): Data & Persistence
 - [Lab 10](https://www.dropbox.com/s/zduffpk8cfy68ja/lab10_datastores.pdf?dl=1): Datastores
 
 # Reading
