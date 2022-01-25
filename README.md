@@ -19,7 +19,7 @@ In this module we're going to break down our existing web skills, fill in any ga
 - [Lecture 10](https://www.dropbox.com/s/92hplnqrtrxoesp/L10_sound%2Bvision.pdf?dl=1): Sound & Vision
 - [Lecture 11](https://www.dropbox.com/s/xir97pzdtwf94dv/L11_standards%2Baccessibility.pdf?dl=1): Standards & Accessibility
 - [Lecture 12](https://www.dropbox.com/s/rlq6re5rb5egckf/L12_deployment.pdf?dl=1): Deployment
-- Lecutre 13: Coda & Review
+- Lecture 13: Coda & Review
 
 # Workbook: Labs & Notes
 
