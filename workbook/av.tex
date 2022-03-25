@@ -178,7 +178,10 @@ oscillator.start();
             });
    </script>
     </body>
-</html>\end{lstlisting}
+</html>
+\end{lstlisting}
+
+\paragraph{} In this example we merely created the makeNoise() function to wrap our AudioContext and associated code. This means that we can call the audio code from elsewhere. We the have added an event listener to the document which listens for click events. When such an event occurs, the makeNoise() function is called and a new AudioContext is created and invoked. Note that each click creates a new AudioContext which could be quite interesting, for example, what if the frequency, or volume, or waveform, or some other feature of each new AudioContext was altered so that we got overlapping audio tones of different kinds? Might be interesting.....?
 
 
 \section{Adding User Interaction}
