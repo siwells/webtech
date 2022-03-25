@@ -155,7 +155,31 @@ oscillator.start();
 </html>
 \end{lstlisting}
 
-\paragraph{} In this example we've literally wrapped our JS in pairs of $<$script$>$, $<$body$>$, and $<$HTML$>$ tags to form a web page around it. That's all we need to embed our audio graph in a page.
+\paragraph{} In this example we've literally wrapped our JS in pairs of $<$script$>$, $<$body$>$, and $<$HTML$>$ tags to form a web page around it. That's all we need to embed our audio graph in a page. However, this example will only work in some browsers, for example Firefox, but, importantly, won't work in Chrome (our chosen environment for this book). The reason comes down to a user experience decision that was made to combat the overuse of audio autoplay a few years ago. For a while it was really annoying when using the Web to have audio blaring out from web pages and adverts in order to get your attention. As a result the Chrome developers decided to only allow audio to play on a given page after user interaction, of some sort, with that page. There are a number of factors that influence this, and which you can take into account when dealing with audio on a pge, but the basic result is the following: in order to get your audio to play, your user should interact with the page in some way. So, to get our example above working on Chrome, let's wrap the audio code in a function, and then add a click handler to the web page. Now when our user clicks on the page, our audio will start to play.
+
+\begin{lstlisting}
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            
+        function makeNoise() {
+            var context = new (
+                window.AudioContext || 
+                window.webkitAudioContext)();
+            var oscillator = context.createOscillator();
+            oscillator.connect(context.destination);
+            oscillator.start();
+            }
+
+        document.addEventListener("click", function(){
+            makeNoise();
+            document.removeEventListener("click", this);
+            });
+   </script>
+    </body>
+</html>\end{lstlisting}
+
 
 \section{Adding User Interaction}
 \paragraph{} That last example showed us the simplest way to create a sound and output it to our speakers. It's quite annoying though as we have to close the tab or turn down the speakers to stop the sound. What we really need is a 'mute' button, which is a perfect opportunity to show how to do user interaction with our AudioContext.
