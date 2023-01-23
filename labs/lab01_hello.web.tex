@@ -29,10 +29,10 @@
 %\usepackage{titlepic}
 %\usepackage{fancyhdr}
 %\usepackage[simplified]{styles/pgf-umlcd}
-\usepackage{shorttoc}
+%\usepackage{shorttoc}
 \usepackage{url}
 %\usepackage{paralist}
-\usepackage{dirtytalk}
+%\usepackage{dirtytalk}
 %\usepackage{verbatim}
 
 \definecolor{grey}{rgb}{0.9, 0.9, 0.9}
@@ -139,30 +139,36 @@
 %\input{sections/labs/04_ui}
 
 \section{Aims}
-\paragraph{} At the end of the practical portion of this topic you will:
+\paragraph{} During the practical portion of this topic you will:
 
 \begin{itemize}
-\item Be able to log into the University system
-\item Be able to run simple programs from the command line
-\item Remember how to program simple software
-\item Have retrieved some supplementary texts from an online publisher
+\item Choose and run an editor (in which you'll create your HTML, CSS, \& JS files during the rest of the trimester.
+\item Write a simple HTML document; your first web page.
+\item Use the Chrome developer tools to support your web development journey.
+\item Use Git to store the files that make up your website.
+\item Use GitHub pages to publish your web pages as a real web sites for all the world to see.
 \end{itemize}
 
 
-\begin{framed}
-{\bf{NOTICE:} This is an introductory lab that is designed to ease ourselves back into programming and make sure that we are comfortable with our learning environment before we start learning new things in earnest after the Xmas break. Things will get harder and more complex over the coming weeks but we need to ensure that we have some tools in place to start with.}  
-\end{framed}
+\paragraph{} This is an introductory lab that is designed to ease ourselves back into things after the Winter break. It's also an important lab for getting ourselves set up for the rest of the trimester. We'll create our learning environment, comprising a text editor, Chrome, Documentation, \& Git, and we'll use that to create a webpage, first on our local computer, and then, via GitHub, on the Web as a published, albeit simple, website. You might have done some web development before, in which case this week might seem quite straightforward, but this lab is designed to achive two goals, firstly, to get everyone starting in the same place, and secondly, to get you to build and publish your first simple web site in the first week of the trimester. After this, we're mostly extending and refining what we've done this week. So it is important not to skip any steps from this week's lab.
 
+\paragraph{} Remember that the lab sheet is a starting place. Most lab sheets will cover some core skills but they are meant to form the starting place for your week's worth of self-directed study, not just 2 hours of work during the timetabled lab. You can probably get through all of the core activities for a given lab sheet in 2 hours, but you are unlikely to have completed all of the challenges because they are designed to be more open ended and lead both to reflection on learning, but also to opportunities to flesh-out and practise your skills.
 
 \section{Activities}
 
-\subsection{Get some tools}
+\subsection{Get some tools: An Editor}
 
-\paragraph{} All we really need for front-end development is a decent text editor and a web browser. Nearly all programming involves working with text, and web programming is no exception. So the most important tool we can add to our toolbox is a good text editor. If you make a good choice then your text editor will be the place that you spend a lot of time. Obviously as things get more complicated we will extend our toolbox, but an editor is a good place to start. If you don't already have a favourite editor (and you are on Windows) then Notepad++\footnote{\url{https://notepad-plus-plus.org/}} is a goodplace to start\footnote{Note that there are many decent editors available, Vim is an oldie but goodie (and my personal choice) but more recntly Atom \url{https://atom.io/} and Sublime \url{http://www.sublimetext.com/} have gained in popularity as well}. Download it, install it. You can even run it from a USB stick so that you can take your development environment around with you.
+\paragraph{} All we really need for front-end development is a decent text editor and a web browser. Nearly all programming involves working with text, and web programming is no exception. So the most important tool we can add to our toolbox is a good text editor. If you make a good choice then your text editor will be the place that you spend a lot of time. Obviously as things get more complicated we will extend our toolbox, but an editor is a good place to start. If you already have a favourite text editor (not a word processor) then feel free to use that.
+
+If you don't already have a favourite editor (and you are on Windows) then Notepad++\footnote{\url{https://notepad-plus-plus.org/}} is a goodplace to start\footnote{Note that there are many decent editors available, Vim is an oldie but goodie (and my personal choice) but more recntly Atom \url{https://atom.io/}, Sublime \url{http://www.sublimetext.com/}, and VisualStudioCode \url{} have gained in popularity as well}. See what is in Apps Anywhere if you're on a lab machine.
+
+Whichever you choose, download it, install it, and run it. Note that NotePad++ can even run from a USB stick so that you can take your development environment around with you to different machines.
+
+Lab machines should already have the Chrome browser installed and ready to run. However, if you're on your own laptop then you might need to install it. This way we can all have a consistent browser experience across the class. This is quite important when it comes to marking of assignments as there can be differences between the various browsers and, at least for this module, we probably don't want to spend too long exploring the thorny problem of cross-browser compatibility.
 
 \subsection{Hello Web}
 
-\paragraph{} Write a short HTML document called hello.html and save it in a folder called lab1, e.g.
+\paragraph{} Using your text editor, write a short HTML document called hello.html and save it in a folder called lab1. The contents of your HTML document should be as follows (but you can alter it and experiment if you desire to see what happens). e.g.
 
 \begin{lstlisting}
 <html>
@@ -175,7 +181,12 @@
 <html>
 \end{lstlisting}
 
-\paragraph{} Open your web page in a variety of browsers (whichever you have installed on the machine you are using). Have a look to see what browsers are installed on the lab machines and compare any differences in the page that is rendered. Consder why different browsers might display things differently.
+\paragraph{} You can open this page in a web browser, like Chrome, by double clicking the .html file which will then open in your machine's default browser. On lab machines the default may be Edge. Alternatively, if you have a browser window open, then you can drag and drop the .html file onto an open browser tab.
+
+\paragraph{} It can also be useful to open your web page in a variety of browsers (whichever you have installed on the machine you are using). Have a look to see what browsers are installed on the lab machines and compare any differences in the page that is rendered. Consider why different browsers might display things differently.
+
+\paragraph{} Think about where this .html file is located, and why, although it is using ``Web'' technology, HTML, it is not yet really a Web Site.
+
 
 \subsection{Developer Tools}
 \paragraph{} You will be using the developer tools built into Chrome a lot in this module, often to find out why things aren't running properly (or why the browser isn't doing what you're sure you told it to do). Partly this is because you will make mistakes. Partly because getting lots of different web technologies to work together is tricky. Things don't fit together just right and we need to work out why. We'll use Chrome to do this because:
@@ -184,6 +195,7 @@
 \item It runs on nearly every common platform
 \item It has developer tools built in
 \item It's a fairly stable platform to work with
+\item There is a lot of supporting documentation
 \end{itemize}
 
 \paragraph{} Open your hello.html file in Chrome and view it using the developer tools. Try mangling your source file, e.g. removing some tags and compare your input file to the view in the developer tools. The browser seems to fix issues, why do you think this is? How mangled can your file be before it isn't displayed? 
@@ -206,28 +218,36 @@
 
 \end{itemize}
 
-\paragraph{} Pointers to other texts, chapters, and papers will be suggested throughout the module, but these should be enough to get started and provide a solid underpinning for your learning.
+\paragraph{} Pointers to other texts, chapters, and papers will be suggested throughout the module, but these should be enough to get started and provide a solid underpinning for your learning. The main idea with the background reading is to give you a set of resources that you can use to expand your knowledge and fill in the gaps. You'll find that many books will cover the same ideas but because the different authors say things in different ways, the authors have different voices, you might respond more positively, or get more from one author as opposed to another.
 
-\subsection{ Use Git}
+\subsection{Use Git}
 \paragraph{} Git is a source control system that enables you to keep track of your source code, its history and any changes you make. Git can be used to track any file but is most efficient and best suited when used only with textual files. Because Git is a \emph{distributed} source control system it works very well to enable groups of people to work on the same source code as well as supporting experimenting with your code, trying out lots of different ideas in separate \emph{branches} (which are a bit like a copy of your code but with tools to help manage that copy and support re-integrating it with your main source tree if you want to), and being able to roll back to an earlier version if you decide you have take a wrong turn.
 
-\paragraph{} I'm not going to give detailed instrutions for setting up Git on the lab machines, that's why this is a bit of a \emph{challenge}.
+\paragraph{} I'm not going to give detailed instrutions for setting up Git on the lab machines, that's why this is a bit of a \emph{challenge}. However, a good starting place is my Git Quickstart document: \url{https://www.dropbox.com/s/2kz34u0zb4qajvd/getting.started.pdf?dl=1}
 
 \begin{framed}
-\textbf{IMPORTANT} Git will be a requirement for submission of the coursework hand-in so should spend some time getting familiar with it as soon as possible. A good place to start is by dipping into the Git SCM book\footnote{\url{http://git-scm.com/book/en/v2/Getting-Started-About-Version-Control}}.
+{\textbf{IMPORTANT} Git will be a requirement for submission of the coursework hand-in so should spend some time getting familiar with it as soon as possible.}
 \end{framed}
+
+\paragraph{} A good place to start to build your knowledge of Git is by dipping into the Git SCM book\footnote{\url{https://git-scm.com/book/en/v2}}.
 
 \paragraph{} There are also numerous interactive tutorials and resources to help you get started with Git:
 \begin{enumerate}
 \item Github's Learn Git 15 minute tutorial: \url{https://try.github.io/levels/1/challenges/1}
 \item Learn Git Branching \url{http://pcottle.github.io/learnGitBranching/}
 \item Git Immersion \url{http://gitimmersion.com/lab_01.html}
+\item A web search for ``Introductory Git Tutorial'' will lead you to hundreds of tutorials that go over the basics of Git usage.
 \end{enumerate}
 
-\paragraph{} You should also create either a Github account\footnote{\url{https://github.com/}} or a Bitbucket account\footnote{\url{https://bitbucket.org}} (or both if you like) then create a repository within your new account called `set08101'. You can then push all of your code throughout the module into this repository. I'd suggest adding a folder for todays lab and commiting your hello.html file. 
+\paragraph{} You should also create a Github account\footnote{\url{https://github.com/}}. Once your account is create, you should create a repository within your new account called `set08101'. You can then push all of your code throughout the module into this repository. I'd suggest adding a folder for todays lab and commiting your hello.html file. 
 
 \paragraph{} Using Git counts as practising a professional skill. The advantage of this approach is that at any point, if you need help with your code, then you have a copy that can be shared remotely, e.g. with Simon or another member of the teaching team. However this only works if you keep adding your code to your repository. That means whenever you make changes you need to (1) add them, (2) commit them with an explanatory message,  and (3) push the changes from your local repository to the shared one on Github or Bitbucket.
 
+
+\subsection{GitHub Pages}
+\paragraph{} One of the most valuable advantages that Git and GitHub give us in this module is the GitHub pages feature. This was designed to enable open source software projects to easily create new websites for this project pages and documentation. However, this is also a very stratighforward way to get free and reliable Website hosting as it is basically a traditional, static, web server; just what we need for this module. GitHub pages can be enabled for any Git repository stored on GitHub. All that is needed is for the repository to contain at least one .html page, of which one must be named index.html (all lowercase). This is the file that GitHub pages will serve to any browser that requests the site. Then there is a single setting that needs to be enabled in the settings of the individual repository. Each repository can have a a different website associated with it, or none. The pages that make up the site are stored inside the repository.
+
+\paragraph{} I have an example, simple ``Choose Your Own Adventure'' website (\url{https://siwells.github.io/cyoag/}) and the source-files for the site are in GitHub (\url{https://github.com/siwells/cyoag}). I've also recorded a short screencast to show the process of enabling GitHub pages for a given site (\url{https://napier.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9bcf640e-326c-4249-92fc-acd101390572}).
 
 
 %\backmatter
