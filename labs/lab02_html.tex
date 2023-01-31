@@ -160,20 +160,7 @@
 \paragraph{} You should, unless otherwise indicated, try out all of the code examples shown on lab sheets for yourself. Whilst this lab sheet can describe an outcome, this is no substitute for experiencing that outcome for yourself and allowing it to spur some experimental exploration.
 
 \subsection{HTML Documents}
-\paragraph{} We saw a simple HTML document last week that looked like this:
-
-\begin{lstlisting}
-<html>
-    <head>
-        <title>Web Tech</title>
-    </head>
-    <body>
-        <h1>Hello Web Tech</h1>
-    </body>
-</html>
-\end{lstlisting}
-
-\paragraph{} We also discovered that the browser is very good at fixing problems in the supplied document. The DOM which is parsed from the HTML file is an internal model that the browser builds of how the HTML is strucured. It actually expects a DOCTYPE tag to begin things so our example last week wasn't strictly correct. It should have been like this:
+\paragraph{} Last week we saw a simple HTML document that looked like this:
 
 \begin{lstlisting}
 <!DOCTYPE html>
@@ -187,7 +174,23 @@
 </html>
 \end{lstlisting}
 
-\paragraph{} We can simplify that some more but it doesn't look very interesting in the browser because we can remove the head, body, title and heading tags and their associated content to give a minimal valid HTML document as follows:
+\paragraph{} With the exception of the {\bf{content}}, ``Web Tech'' and ``Hello Web Tech'', this is probably as simple as a minimally useful HTML document can be. A slightly more generically useful bit would look like this:
+\begin{lstlisting}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Web Tech</title>
+    </head>
+    <body>
+        <h1>Hello Web Tech</h1>
+        <p>Something about Web technologies?</p>
+    </body>
+</html>
+\end{lstlisting}
+
+\paragraph{} By adding the $<$p$>$ tags we've added a section for a paragraph to go with our heading, $<$h1$>$ tags. You could edit the content to be any text that you wanted your page to be about. Why not go ahead and do thatnow?
+
+\paragraph{} We can, and will, add more tags to our pages as develop more capable sites, but we can also simplify that some more by removing tags. However it doesn't look very interesting in the browser if we remove all of the content. We can remove the head, body, title and heading tags and their associated content to give a minimal valid HTML document as follows:
 
 \begin{lstlisting}
 <!DOCTYPE html>
@@ -195,7 +198,9 @@
 </html>
 \end{lstlisting}
 
-\paragraph{} We can also remove various other aspects of our HTML to varying effect. Try this. Take your example HTML and experiment with removing various elements then looking to see what the effect is in your browser. It is worth trying this in a couple of browsers if you have some them available so that you can see what effect different HTML problems might have on the resulting rendered page. At the very least you should experiment with adding content that isn't surrounded by tags, omitting entired opening, and closing, tags, and omitting parts of a tag. For example, what happens when you forget to close a tag properly and leave off the final $>$? What happens if you do this on the opening tag of a pair rather than the closing tag? Why do you think there might be a difference? How do differnt browsers handle these circumstances? Whilst trying these exercises you should also have the browsers console window open so that you can see any messages that the browser prints.
+\paragraph{} We can also remove various other aspects of our HTML to varying effect. Try experimenting with this to see what effects this has. Take your example HTML and experiment with removing various elements then looking to see what the effect is in your browser. You should also see how the browser reacts when you have an empty .html file and when you have a .html file that contains content text that isn't tagged at all. Notice how the browser does it's best to provide the reader with something uesful? It is worth trying all this in a couple of browsers if you have some available so that you can see what effect different HTML problems might have on the resulting rendered page. At the very least you should experiment with adding content that isn't surrounded by tags, omitting entired opening, and closing, tags, and omitting parts of a tag. For example, what happens when you forget to close a tag properly and leave off the final $>$? What happens if you do this on the opening tag of a pair rather than the closing tag? Why do you think there might be a difference? How do different browsers handle these circumstances? You can also try duplicating or repeating some of the tags and content in the page and viweing the results. This will all start to give you a feel for the work that the browser does in taking an HTML file and turning it into a rendered Web page. The browser is really doing a lot of handholding and fixing to try and take even the most malformed HTML and still enable the content of that HTML to be viewed usefully.
+
+\paragraph{} Whilst trying these exercises you should also have the browser's console window open so that you can see any messages that the browser prints.
 
 \subsection{HTML Elements}
 \paragraph{} It is from this minimal set of tags in the HTML document example above that all possible valid HTML documents are built. One of the core ideas in HTML is that it is a tree structure. It starts with a root tag pair, the HTML tags, which enclose other pairs of tags, usually at this stage the head and body tags, which in turn enclose other pairs of tags, until you're done, i.e. you've described all of the text that you want the document to hold. These tag paris are called Elements. Each element has a start tag and an end tag, for example, a start tag might look like this: $<$title$>$ and an end tag might look like this: $<$/title$>$. Notice that the sole difference between the two tags is a single backslash character.
