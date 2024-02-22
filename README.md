@@ -56,6 +56,7 @@ The following aren't currently available via our library, but are worth getting 
 - Javascript: The Good Parts by Douglas Crockford
 - The Tangled Web: A Guide to Securing Modern Web Applications by Michal Zalewski
 - The Web Application Hacker's Handbook (2nd Edition) by Dafydd Stuttard & Marcus Pinto
+- Design for Hackers by David Kadavy (the electronic version, *not* the print version)
 
 # Assessments
 
