@@ -54,7 +54,7 @@ The following aren't currently available via our library, but are worth getting 
 - [Eloquent Javascript](https://eloquentjavascript.net/) by Marijn Haverbeke - If you choose one JS book to work through, probably this is the best.
 - [Javascript: The Good Parts](http://shop.oreilly.com/product/9780596517748.do) by Douglas Crockford - Getting a little old now and not as useful as it used to be. Still interesting if you get really into JS though.
 - [Javascript Allonge](https://leanpub.com/javascriptallongesix) by Reg “raganwald” Braithwaite - A deeper dive into JS
-- Design for Hackers by David Kadavy (the electronic version, *not* the print version)
+- Design for Hackers by David Kadavy (the electronic version, *not* the print version. The electronic version is in colour, which is really useful. The print version is print on demand in black and white which is not a good experience when a good portion of the book is devoted to, e.g. colour theory.)
 
 # Assessments
 
