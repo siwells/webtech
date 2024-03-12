@@ -54,8 +54,6 @@ The following aren't currently available via our library, but are worth getting 
 - [Eloquent Javascript](https://eloquentjavascript.net/) by Marijn Haverbeke - If you choose one JS book to work through, probably this is the best.
 - [Javascript: The Good Parts](http://shop.oreilly.com/product/9780596517748.do) by Douglas Crockford - Getting a little old now and not as useful as it used to be. Still interesting if you get really into JS though.
 - [Javascript Allonge](https://leanpub.com/javascriptallongesix) by Reg “raganwald” Braithwaite - A deeper dive into JS
-- The Tangled Web: A Guide to Securing Modern Web Applications by Michal Zalewski
-- The Web Application Hacker's Handbook (2nd Edition) by Dafydd Stuttard & Marcus Pinto
 - Design for Hackers by David Kadavy (the electronic version, *not* the print version)
 
 # Assessments
