@@ -51,6 +51,7 @@ The library also has a lot of books on web development & related technologies. Y
 
 The following aren't currently available via our library, but are worth getting a hold of:
 
+- [Eloquent Javascript](https://eloquentjavascript.net/) by Marijn Haverbeke - If you choose one JS book to work through, probably this is the best.
 - Javascript: The Good Parts by Douglas Crockford
 - The Tangled Web: A Guide to Securing Modern Web Applications by Michal Zalewski
 - The Web Application Hacker's Handbook (2nd Edition) by Dafydd Stuttard & Marcus Pinto
